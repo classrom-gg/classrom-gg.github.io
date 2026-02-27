@@ -1,4 +1,4 @@
-name: Build & Deploy
+name: Build & Deploy to GitHub Pages
 
 on:
   push:
@@ -6,9 +6,13 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
@@ -18,7 +22,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Checkout site repo
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -26,18 +30,49 @@ jobs:
         with:
           node-version: '20'
 
-      # Chạy script → tạo slope/, retro-bowl/... sitemap.xml, robots.txt, cdn-links.json
-      - name: Generate slug pages + sitemap
+      # Chạy script: đọc games.json → tạo slug folders + sitemap + robots + cdn-links
+      - name: Generate slug pages
         run: node generate-games.js
 
-      # Upload toàn bộ thư mục (bao gồm cả slug folders vừa tạo) lên Pages
+      # Copy tất cả file cần thiết vào _site/
+      - name: Prepare _site folder
+        run: |
+          mkdir -p _site
+
+          # Copy file tĩnh chính
+          cp index.html   _site/
+          cp play.html    _site/
+          cp games.json   _site/
+          cp sitemap.xml  _site/
+          cp robots.txt   _site/
+          cp cdn-links.json _site/ 2>/dev/null || true
+
+          # Copy data/ (thumbs)
+          [ -d data ] && cp -r data _site/
+
+          # Copy tất cả slug folders (slope/, retro-bowl/, ...)
+          # Bỏ qua các folder/file không cần deploy
+          SKIP="_site|.git|.github|node_modules|generate-games.js|package*.json"
+          for item in */; do
+            folder="${item%/}"
+            if ! echo "$folder" | grep -qE "^(_site|\.git|\.github|node_modules)$"; then
+              cp -r "$folder" _site/
+            fi
+          done
+
+          echo "=== _site contents ==="
+          ls -la _site/
+          echo ""
+          echo "=== Slug folders ==="
+          ls _site/ | grep -v '\.' || echo "(none)"
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: '_site'
 
       - name: Deploy to GitHub Pages
         id: deployment
