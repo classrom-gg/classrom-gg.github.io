@@ -260,13 +260,25 @@ const EMO = ['🎮','🕹️','👾','🎲','⚔️','🚀','🏎️','🎯','�
 const emo  = n => { let h=0; for(let c of n) h=(h*31+c.charCodeAt(0))&0xffff; return EMO[h%EMO.length]; };
 const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 
-const P        = new URLSearchParams(location.search);
-let gamePath   = P.get('path')||'';
-let gameType   = P.get('type')||'html';
-let gameName   = decodeURIComponent(P.get('name')||'Game');
-const gameSlug = P.get('slug')||'';
-let fromSlug   = gameSlug && !gamePath;
-const gameUrl  = gamePath?(gamePath.startsWith('http')?gamePath:`${CDN}/${gamePath}`):'';
+const P           = new URLSearchParams(location.search);
+let gamePath      = P.get('path')||'';
+let gameType      = P.get('type')||'html';
+let gameName      = decodeURIComponent(P.get('name')||'Game');
+let gameSource    = P.get('source')||'cdn';    // 'cdn' | 'iframe'
+let gameIframeUrl = P.get('iframeUrl')||'';
+const gameSlug    = P.get('slug')||'';
+let fromSlug      = gameSlug && !gamePath && !gameIframeUrl;
+
+// source=cdn    → dùng đường dẫn local /data/pages/slope/index.html (không qua CDN)
+// source=iframe → dùng iframeUrl từ site khác
+// CDN chỉ dùng khi path đã là URL đầy đủ (legacy)
+function resolveUrl(path, source, iframeUrl) {
+  if (source === 'iframe' && iframeUrl) return iframeUrl;
+  if (!path) return '';
+  if (path.startsWith('http')) return path;
+  return '/' + path;   // local path trên GitHub Pages
+}
+const gameUrl = resolveUrl(gamePath, gameSource, gameIframeUrl);
 
 function setMeta(name,type){
   document.title=`${name} — Classrom.GG`;
@@ -351,8 +363,13 @@ async function loadGames(){
     const res=await fetch('/games.json');const data=await res.json();allGames=data.games||[];
     if(fromSlug){
       const m=allGames.find(g=>(g.slug||slug(g.name))===gameSlug);
-      if(m){gamePath=m.path;gameType=m.type;gameName=m.name;setMeta(gameName,gameType);gameType==='swf'?loadSWF(`${CDN}/${m.path}`):loadHTML5(`${CDN}/${m.path}`);}
-      else showErr(`Game "${gameSlug}" not found.`);
+      if(m){
+        gamePath=m.path||''; gameType=m.type; gameName=m.name;
+        gameSource=m.source||'cdn'; gameIframeUrl=m.iframeUrl||'';
+        setMeta(gameName,gameType);
+        const url=resolveUrl(gamePath,gameSource,gameIframeUrl);
+        gameType==='swf'?loadSWF(url):loadHTML5(url);
+      } else showErr(`Game "${gameSlug}" not found.`);
     }
     renderSidebar();renderMore();
   }catch(e){document.getElementById('sb-list').innerHTML='<div class="sb-empty">LOAD<br>ERROR</div>';}
@@ -374,7 +391,7 @@ document.getElementById('btn-fs').addEventListener('click',toggleFS);
 document.getElementById('btn-fs2').addEventListener('click',toggleFS);
 document.addEventListener('fullscreenchange',()=>{const l=document.fullscreenElement?'✕':'⛶';document.getElementById('btn-fs').textContent=l;document.getElementById('btn-fs2').textContent=l;});
 
-if(!fromSlug&&!gamePath)showErr('No game specified.');
+if(!fromSlug&&!gamePath&&!gameIframeUrl)showErr('No game specified.');
 else if(!fromSlug){setMeta(gameName,gameType);gameType==='swf'?loadSWF(gameUrl):loadHTML5(gameUrl);}
 loadGames();
 </script>
