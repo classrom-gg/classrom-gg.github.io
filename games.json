@@ -4,30 +4,77 @@
     "repo": "classrom-gg/classrom-gg",
     "branch": "main",
     "cdnBase": "https://cdn.jsdelivr.net/gh/classrom-gg/classrom-gg@main",
-    "totalGames": 4,
-    "htmlCount": 2,
+    "totalGames": 6,
+    "htmlCount": 4,
     "swfCount": 2
   },
   "games": [
-    {
-      "name": "Angry Birds",
-      "type": "html",
-      "path": "angry-birds/index.html"
-    },
+
     {
       "name": "2048",
+      "slug": "2048",
       "type": "html",
-      "path": "2048/index.html"
+      "source": "cdn",
+      "path": "2048/index.html",
+      "thumb": "/data/thumbs/2048.jpg",
+      "description": "Slide tiles and combine numbers to reach the 2048 tile!",
+      "tags": ["puzzle", "numbers", "strategy"]
     },
+
+    {
+      "name": "Angry Birds",
+      "slug": "angry-birds",
+      "type": "html",
+      "source": "iframe",
+      "iframeUrl": "https://somesite.com/angry-birds/",
+      "thumb": "/data/thumbs/angry-birds.jpg",
+      "description": "Launch birds to destroy the pigs' structures!",
+      "tags": ["action", "physics", "classic"]
+    },
+
+    {
+      "name": "Subway Surfers",
+      "slug": "subway-surfers",
+      "type": "html",
+      "source": "iframe",
+      "iframeUrl": "https://somesite.com/subway-surfers/",
+      "thumb": "/data/thumbs/subway-surfers.jpg",
+      "description": "Run through the subway, dodge trains and collect coins!",
+      "tags": ["runner", "action", "arcade"]
+    },
+
     {
       "name": "Pacman",
+      "slug": "pacman",
       "type": "swf",
-      "path": "pacman/pacman.swf"
+      "source": "cdn",
+      "path": "pacman/pacman.swf",
+      "thumb": "/data/thumbs/pacman.jpg",
+      "description": "The classic arcade game. Eat dots, avoid ghosts!",
+      "tags": ["arcade", "classic", "flash"]
     },
+
     {
       "name": "Super Mario Flash",
+      "slug": "super-mario-flash",
       "type": "swf",
-      "path": "super-mario-flash/mario.swf"
+      "source": "iframe",
+      "iframeUrl": "https://somesite.com/super-mario-flash/",
+      "thumb": "/data/thumbs/super-mario-flash.jpg",
+      "description": "Play the classic Mario platformer right in your browser!",
+      "tags": ["platformer", "classic", "flash"]
+    },
+
+    {
+      "name": "Slope",
+      "slug": "slope",
+      "type": "html",
+      "source": "iframe",
+      "iframeUrl": "https://somesite.com/slope/",
+      "thumb": "/data/thumbs/slope.jpg",
+      "description": "Guide a ball down a neon slope. How far can you go?",
+      "tags": ["skill", "endless", "3d"]
     }
+
   ]
 }
