@@ -51,7 +51,7 @@
       rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px
     );
     pointer-events:none;
-    z-index:9999;
+    z-index:1; /* Không đè iframe game */
   }
 
   /* ── HEADER ── */
@@ -158,6 +158,9 @@
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+    /* Tạo stacking context riêng — ngăn ::before body phủ vào */
+    isolation: isolate;
+    z-index: 2;
   }
   .game-frame-inner {
     position: relative;
@@ -166,32 +169,26 @@
     overflow: hidden;
     background: #000;
   }
-  .game-frame-inner iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
-    opacity: 1 !important;
-    filter: none !important;
-  }
-  .game-frame-inner canvas {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    opacity: 1 !important;
-    filter: none !important;
-  }
-  .game-frame-inner .ruffle-container {
+  /* iframe/canvas/ruffle: tuyệt đối sạch — không filter, không opacity */
+  .game-frame-inner iframe,
+  .game-frame-inner canvas,
+  .game-frame-inner ruffle-player,
+  .game-frame-inner .ruffle-container,
+  .game-frame-inner .ruffle-container * {
     position: absolute;
     inset: 0;
     width: 100% !important;
     height: 100% !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block;
     opacity: 1 !important;
     filter: none !important;
+    mix-blend-mode: normal !important;
+    background-blend-mode: normal !important;
+    -webkit-filter: none !important;
+    image-rendering: auto;
   }
 
   /* Fullscreen button */
