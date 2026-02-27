@@ -1,4 +1,4 @@
-name: Generate games.json & Deploy
+name: Build & Deploy
 
 on:
   push:
@@ -10,15 +10,15 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
-  generate:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - name: Checkout
+      - name: Checkout site repo
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -26,34 +26,19 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Generate games.json
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          GITHUB_OWNER: classrom-gg
-          GITHUB_REPO: classrom-gg
-          GITHUB_BRANCH: main
+      # Chạy script → tạo slope/, retro-bowl/... sitemap.xml, robots.txt, cdn-links.json
+      - name: Generate slug pages + sitemap
         run: node generate-games.js
 
-      - name: Commit games.json if changed
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add games.json
-          git diff --cached --quiet || git commit -m "chore: update games.json [skip ci]"
-          git push
+      # Upload toàn bộ thư mục (bao gồm cả slug folders vừa tạo) lên Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
-      - name: Upload artifact for Pages
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
 
-  deploy:
-    needs: generate
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
