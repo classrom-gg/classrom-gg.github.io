@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Classrom.GG — Play Free Games</title>
+<title>Classrom.GG — Play Free Games Online</title>
+<meta name="description" content="Play free HTML5 and Flash games online. No download required. Works everywhere!">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
+  :root[data-theme="dark"] {
     --bg: #0a0a0f;
     --bg2: #0f0f1a;
     --card: #13131f;
@@ -18,7 +19,26 @@
     --text: #e2e8f0;
     --muted: #64748b;
     --glow: 0 0 20px rgba(0,255,170,0.25);
+    --hero-gradient: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237,0.15) 0%, transparent 70%);
+    --scanline: rgba(0,0,0,0.08);
+    --theme-icon: '☀️';
   }
+  :root[data-theme="light"] {
+    --bg: #f0f4f8;
+    --bg2: #e8edf4;
+    --card: #ffffff;
+    --border: #d1d9e6;
+    --accent: #059669;
+    --accent2: #e11d48;
+    --accent3: #7c3aed;
+    --text: #1e293b;
+    --muted: #64748b;
+    --glow: 0 0 20px rgba(5,150,105,0.2);
+    --hero-gradient: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237,0.08) 0%, transparent 70%);
+    --scanline: transparent;
+    --theme-icon: '🌙';
+  }
+
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior: smooth; }
 
@@ -29,19 +49,17 @@
     font-size: 16px;
     min-height: 100vh;
     overflow-x: hidden;
+    transition: background 0.3s, color 0.3s;
   }
 
-  /* scanline overlay */
-  body::before {
+  /* scanline overlay - dark only */
+  [data-theme="dark"] body::before {
     content:'';
     position:fixed;
     inset:0;
     background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(0,0,0,0.08) 2px,
-      rgba(0,0,0,0.08) 4px
+      0deg, transparent, transparent 2px,
+      rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px
     );
     pointer-events:none;
     z-index:9999;
@@ -49,42 +67,66 @@
 
   /* ── HEADER ── */
   header {
-    padding: 20px 32px;
+    padding: 16px 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid var(--border);
-    background: rgba(10,10,15,0.95);
+    background: var(--bg);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: background 0.3s, border-color 0.3s;
   }
   .logo {
     font-family: 'Press Start 2P', monospace;
-    font-size: 14px;
+    font-size: 13px;
     color: var(--accent);
-    text-shadow: 0 0 20px rgba(0,255,170,0.6);
+    text-shadow: 0 0 20px rgba(0,255,170,0.5);
     text-decoration: none;
     letter-spacing: 1px;
   }
+  [data-theme="light"] .logo { text-shadow: none; }
   .logo span { color: var(--accent2); }
-  nav { display:flex; gap:24px; align-items:center; }
+
+  .header-right { display:flex; gap:24px; align-items:center; }
+  nav { display:flex; gap:20px; align-items:center; }
   nav a {
     color: var(--muted);
     text-decoration: none;
-    font-weight: 600;
-    font-size: 13px;
+    font-weight: 700;
+    font-size: 12px;
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: color 0.2s;
   }
   nav a:hover { color: var(--accent); }
 
+  /* Theme Toggle */
+  .theme-toggle {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .theme-toggle:hover { border-color: var(--accent); }
+
   /* ── HERO ── */
   .hero {
     text-align: center;
-    padding: 80px 32px 60px;
+    padding: 72px 32px 52px;
     position: relative;
     overflow: hidden;
   }
@@ -92,39 +134,41 @@
     content:'';
     position:absolute;
     inset:0;
-    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237,0.15) 0%, transparent 70%);
+    background: var(--hero-gradient);
     pointer-events:none;
   }
   .hero h1 {
     font-family: 'Press Start 2P', monospace;
-    font-size: clamp(18px, 3vw, 32px);
-    line-height: 1.6;
-    color: #fff;
-    text-shadow: 0 0 40px rgba(124,58,237,0.8);
-    margin-bottom: 16px;
+    font-size: clamp(16px, 2.8vw, 30px);
+    line-height: 1.7;
+    color: var(--text);
+    text-shadow: 0 0 40px rgba(124,58,237,0.6);
+    margin-bottom: 14px;
   }
+  [data-theme="light"] .hero h1 { text-shadow: none; }
   .hero h1 em {
     font-style: normal;
     color: var(--accent);
     text-shadow: 0 0 30px rgba(0,255,170,0.8);
   }
+  [data-theme="light"] .hero h1 em { text-shadow: none; }
   .hero p {
     color: var(--muted);
-    font-size: 18px;
-    max-width: 500px;
-    margin: 0 auto 40px;
+    font-size: 17px;
+    max-width: 480px;
+    margin: 0 auto 36px;
     font-weight: 600;
   }
 
   /* ── SEARCH ── */
   .search-wrap {
-    max-width: 500px;
+    max-width: 480px;
     margin: 0 auto;
     position: relative;
   }
   .search-wrap input {
     width: 100%;
-    padding: 14px 20px 14px 48px;
+    padding: 13px 20px 13px 46px;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -133,7 +177,7 @@
     font-size: 16px;
     font-weight: 600;
     outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.3s;
   }
   .search-wrap input:focus {
     border-color: var(--accent);
@@ -142,11 +186,35 @@
   .search-wrap input::placeholder { color: var(--muted); }
   .search-icon {
     position: absolute;
-    left: 16px;
+    left: 15px;
     top: 50%;
     transform: translateY(-50%);
     color: var(--muted);
-    font-size: 18px;
+    font-size: 17px;
+    pointer-events: none;
+  }
+
+  /* ── STATS ── */
+  .stats {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    padding: 0 32px 36px;
+    flex-wrap: wrap;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 20px;
+    color: var(--accent);
+    display: block;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
   }
 
   /* ── FILTERS ── */
@@ -155,7 +223,7 @@
     gap: 10px;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 0 32px 40px;
+    padding: 0 32px 36px;
   }
   .filter-btn {
     padding: 8px 20px;
@@ -164,14 +232,14 @@
     background: var(--card);
     color: var(--muted);
     font-family: 'Rajdhani', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.2s;
   }
-  .filter-btn:hover { border-color: var(--accent3); color: #fff; }
+  .filter-btn:hover { border-color: var(--accent3); color: var(--text); }
   .filter-btn.active {
     background: var(--accent3);
     border-color: var(--accent3);
@@ -189,47 +257,25 @@
     box-shadow: 0 0 16px rgba(14,165,233,0.4);
   }
 
-  /* ── STATS BAR ── */
-  .stats {
-    display: flex;
-    gap: 32px;
-    justify-content: center;
-    padding: 0 32px 40px;
-    flex-wrap: wrap;
-  }
-  .stat {
-    text-align: center;
-  }
-  .stat-num {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 20px;
-    color: var(--accent);
-    display: block;
-  }
-  .stat-label {
-    font-size: 12px;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-  }
-
-  /* ── GRID ── */
+  /* ── SECTION LABEL ── */
   .section-title {
     font-family: 'Press Start 2P', monospace;
-    font-size: 11px;
+    font-size: 10px;
     color: var(--muted);
     letter-spacing: 2px;
     text-transform: uppercase;
-    padding: 0 32px 20px;
+    padding: 0 32px 18px;
+    max-width: 1400px;
+    margin: 0 auto;
   }
   .section-title span { color: var(--accent); }
 
+  /* ── GRID ── */
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
     gap: 16px;
-    padding: 0 32px 60px;
+    padding: 0 32px;
     max-width: 1400px;
     margin: 0 auto;
   }
@@ -245,15 +291,15 @@
     color: inherit;
     display: block;
     transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
-    animation: fadeIn 0.4s ease both;
+    animation: fadeIn 0.35s ease both;
   }
   .card:hover {
     transform: translateY(-4px);
     border-color: var(--accent3);
-    box-shadow: 0 8px 32px rgba(124,58,237,0.25);
+    box-shadow: 0 8px 28px rgba(124,58,237,0.22);
   }
   @keyframes fadeIn {
-    from { opacity:0; transform: translateY(12px); }
+    from { opacity:0; transform: translateY(10px); }
     to   { opacity:1; transform: translateY(0); }
   }
 
@@ -263,9 +309,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 40px;
+    font-size: 38px;
     position: relative;
     overflow: hidden;
+  }
+  [data-theme="light"] .card-thumb {
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #a5b4fc 100%);
+  }
+  .card-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
   }
   .card-thumb::after {
     content:'▶';
@@ -274,7 +328,7 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:28px;
+    font-size:26px;
     color:rgba(255,255,255,0.0);
     background: rgba(0,0,0,0);
     transition: all 0.2s;
@@ -284,23 +338,20 @@
     background: rgba(0,0,0,0.5);
   }
 
-  .card-body { padding: 12px 14px; }
+  .card-body { padding: 11px 13px; }
   .card-name {
     font-size: 14px;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
     margin-bottom: 6px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: var(--text);
   }
-  .card-meta {
-    display: flex;
-    gap: 6px;
-    align-items: center;
-  }
+  .card-meta { display: flex; gap: 6px; align-items: center; }
   .badge {
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -310,60 +361,115 @@
   .badge-html5 { background: rgba(14,165,233,0.15); color: #38bdf8; border: 1px solid rgba(14,165,233,0.3); }
   .badge-flash { background: rgba(255,62,108,0.15); color: #fb7185; border: 1px solid rgba(255,62,108,0.3); }
 
-  /* ── EMPTY STATE ── */
+  /* ── PAGINATION ── */
+  .pagination {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 32px 20px;
+    flex-wrap: wrap;
+  }
+  .page-btn {
+    min-width: 38px;
+    height: 38px;
+    padding: 0 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--muted);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .page-btn:hover:not(:disabled) { border-color: var(--accent3); color: var(--text); }
+  .page-btn.active {
+    background: var(--accent3);
+    border-color: var(--accent3);
+    color: #fff;
+    box-shadow: 0 0 12px rgba(124,58,237,0.4);
+  }
+  .page-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+  .page-info {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0 8px;
+  }
+  .load-more-wrap {
+    text-align: center;
+    padding: 32px 32px 0;
+  }
+  .load-more-btn {
+    padding: 12px 36px;
+    background: transparent;
+    border: 1px solid var(--accent3);
+    border-radius: 8px;
+    color: var(--accent3);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 1px;
+  }
+  .load-more-btn:hover {
+    background: var(--accent3);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(124,58,237,0.4);
+  }
+  .load-more-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  /* ── EMPTY / LOADING ── */
   .empty {
     grid-column: 1 / -1;
     text-align: center;
     padding: 80px 0;
     color: var(--muted);
   }
-  .empty-icon {
-    font-size: 64px;
-    display: block;
-    margin-bottom: 16px;
-    opacity: 0.4;
-  }
-  .empty p {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 11px;
-    line-height: 2;
-  }
+  .empty-icon { font-size: 56px; display: block; margin-bottom: 16px; opacity: 0.4; }
+  .empty p { font-family: 'Press Start 2P', monospace; font-size: 10px; line-height: 2; }
 
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 32px;
-    text-align: center;
-    color: var(--muted);
-    font-size: 13px;
-    font-weight: 600;
-  }
-  footer a { color: var(--accent); text-decoration: none; }
-
-  /* ── LOADING ── */
   .loading {
     text-align: center;
     padding: 80px 0;
     color: var(--muted);
     font-family: 'Press Start 2P', monospace;
-    font-size: 11px;
+    font-size: 10px;
+    grid-column: 1 / -1;
   }
-  .loading::after {
-    content: '...';
-    animation: dots 1.2s infinite;
-  }
-  @keyframes dots {
-    0%,20%  { content:'.'   }
-    40%     { content:'..'  }
-    60%,100%{ content:'...' }
-  }
+  @keyframes pulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+  .loading { animation: pulse 1.5s infinite; }
 
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 32px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 60px;
+    transition: border-color 0.3s;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* ── RESPONSIVE ── */
   @media (max-width: 600px) {
-    .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); padding: 0 16px 40px; }
-    .hero { padding: 50px 16px 40px; }
-    .filters, .stats { padding-left: 16px; padding-right: 16px; }
-    header { padding: 16px; }
+    .grid { grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); padding: 0 14px; }
+    .hero { padding: 48px 16px 36px; }
+    .filters, .stats, .section-title { padding-left: 14px; padding-right: 14px; }
+    header { padding: 14px 16px; }
     nav a { display: none; }
+    .logo { font-size: 11px; }
+    .pagination { padding: 28px 14px 14px; }
   }
 </style>
 </head>
@@ -371,11 +477,17 @@
 
 <header>
   <a class="logo" href="index.html">CLASSROM<span>.GG</span></a>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="#flash">Flash</a>
-    <a href="#html5">HTML5</a>
-  </nav>
+  <div class="header-right">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#flash" onclick="setFilter('swf')">Flash</a>
+      <a href="#html5" onclick="setFilter('html')">HTML5</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
+      <span id="themeIcon">☀️</span>
+      <span id="themeLabel">LIGHT</span>
+    </button>
+  </div>
 </header>
 
 <section class="hero">
@@ -387,115 +499,191 @@
   </div>
 </section>
 
-<div class="stats" id="stats">
+<div class="stats">
   <div class="stat"><span class="stat-num" id="total-count">—</span><span class="stat-label">Total Games</span></div>
   <div class="stat"><span class="stat-num" id="html5-count">—</span><span class="stat-label">HTML5</span></div>
   <div class="stat"><span class="stat-num" id="flash-count">—</span><span class="stat-label">Flash</span></div>
 </div>
 
 <div class="filters">
-  <button class="filter-btn active" data-filter="all">⚡ All</button>
-  <button class="filter-btn html5" data-filter="html">🌐 HTML5</button>
-  <button class="filter-btn flash" data-filter="swf">🎮 Flash</button>
+  <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">⚡ All</button>
+  <button class="filter-btn html5" data-filter="html" onclick="setFilter('html')">🌐 HTML5</button>
+  <button class="filter-btn flash" data-filter="swf" onclick="setFilter('swf')">🎮 Flash</button>
 </div>
 
-<p class="section-title" id="section-label">ALL GAMES — <span id="game-count">0</span> games</p>
+<p class="section-title" id="section-label">ALL GAMES — <span id="game-count">0</span> GAMES</p>
 
 <main class="grid" id="grid">
-  <div class="loading">Loading games</div>
+  <div class="loading">Loading games...</div>
 </main>
+
+<div id="pagination-wrap"></div>
 
 <footer>
   <p>© 2025 Classrom.GG &nbsp;·&nbsp; Powered by <a href="https://ruffle.rs" target="_blank">Ruffle</a> Flash Emulator &nbsp;·&nbsp; <a href="https://github.com/classrom-gg/classrom-gg" target="_blank">GitHub</a></p>
 </footer>
 
 <script>
+// ── CONFIG ──
+const GAMES_PER_PAGE = 24;
 const EMOJIS = ['🎮','🕹️','👾','🎲','⚔️','🚀','🏎️','🎯','🧩','🌟','🔥','💎','🐉','🦊','🤖'];
 
+// ── STATE ──
 let allGames = [];
+let filteredGames = [];
 let currentFilter = 'all';
+let currentPage = 1;
 
-// Random emoji per game (seeded by name)
+// ── THEME ──
+function getStoredTheme() { return localStorage.getItem('cgTheme') || 'dark'; }
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  const icon = document.getElementById('themeIcon');
+  const label = document.getElementById('themeLabel');
+  if (theme === 'dark') { icon.textContent = '☀️'; label.textContent = 'LIGHT'; }
+  else { icon.textContent = '🌙'; label.textContent = 'DARK'; }
+  localStorage.setItem('cgTheme', theme);
+}
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme');
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+}
+applyTheme(getStoredTheme());
+
+// ── UTILS ──
 function getEmoji(name) {
   let hash = 0;
   for (let c of name) hash = (hash * 31 + c.charCodeAt(0)) & 0xffff;
   return EMOJIS[hash % EMOJIS.length];
 }
+function toSlug(n) { return n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); }
 
+// ── RENDER ──
 function renderCards(games) {
   const grid = document.getElementById('grid');
-  document.getElementById('game-count').textContent = games.length;
-
   if (!games.length) {
     grid.innerHTML = `<div class="empty"><span class="empty-icon">👾</span><p>NO GAMES FOUND<br>TRY A DIFFERENT SEARCH</p></div>`;
     return;
   }
 
-  // Dùng slug làm URL — SEO sạch, bot Google đọc được slug page
-  const toSlug = n => n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  // Pagination slice
+  const start = (currentPage - 1) * GAMES_PER_PAGE;
+  const pageGames = games.slice(start, start + GAMES_PER_PAGE);
 
-  grid.innerHTML = games.map((g, i) => {
+  grid.innerHTML = pageGames.map((g, i) => {
     const slug = g.slug || toSlug(g.name);
     const thumb = g.thumb
-      ? `<img src="${g.thumb}" alt="${g.name}" loading="lazy" onerror="this.style.display='none';this.nextSibling.style.display='flex'">`
-        + `<span style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:32px">${getEmoji(g.name)}</span>`
+      ? `<img src="${g.thumb}" alt="${g.name}" loading="lazy" onerror="this.style.display='none'">`
       : `<span>${getEmoji(g.name)}</span>`;
     return `
-    <a class="card" href="/${slug}" style="animation-delay:${Math.min(i*0.04, 0.6)}s">
+    <a class="card" href="game.html?slug=${slug}" style="animation-delay:${Math.min(i*0.035,0.5)}s">
       <div class="card-thumb">${thumb}</div>
       <div class="card-body">
         <div class="card-name">${g.name}</div>
         <div class="card-meta">
-          <span class="badge badge-${g.type === 'swf' ? 'flash' : 'html5'}">${g.type === 'swf' ? 'FLASH' : 'HTML5'}</span>
+          <span class="badge badge-${g.type==='swf'?'flash':'html5'}">${g.type==='swf'?'FLASH':'HTML5'}</span>
         </div>
       </div>
     </a>`;
   }).join('');
 }
 
-function applyFilters() {
-  const q = document.getElementById('search').value.toLowerCase();
-  const filtered = allGames.filter(g => {
-    const typeMatch = currentFilter === 'all' || g.type === currentFilter;
-    const nameMatch = g.name.toLowerCase().includes(q);
-    return typeMatch && nameMatch;
-  });
-  renderCards(filtered);
+function renderPagination(total) {
+  const wrap = document.getElementById('pagination-wrap');
+  const totalPages = Math.ceil(total / GAMES_PER_PAGE);
+  if (totalPages <= 1) { wrap.innerHTML = ''; return; }
+
+  // Build page numbers (show max 7 buttons)
+  let pages = [];
+  if (totalPages <= 7) {
+    for (let i = 1; i <= totalPages; i++) pages.push(i);
+  } else {
+    pages = [1];
+    let start = Math.max(2, currentPage - 2);
+    let end   = Math.min(totalPages - 1, currentPage + 2);
+    if (start > 2) pages.push('...');
+    for (let i = start; i <= end; i++) pages.push(i);
+    if (end < totalPages - 1) pages.push('...');
+    pages.push(totalPages);
+  }
+
+  const pagesHtml = pages.map(p =>
+    p === '...'
+      ? `<span class="page-info">…</span>`
+      : `<button class="page-btn ${p===currentPage?'active':''}" onclick="goPage(${p})">${p}</button>`
+  ).join('');
+
+  wrap.innerHTML = `
+    <div class="pagination">
+      <button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>←</button>
+      ${pagesHtml}
+      <button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===totalPages?'disabled':''}>→</button>
+    </div>
+    <p class="page-info" style="text-align:center;padding-bottom:16px">
+      PAGE ${currentPage} / ${totalPages} &nbsp;·&nbsp; ${total} GAMES
+    </p>`;
 }
 
+function goPage(n) {
+  const total = Math.ceil(filteredGames.length / GAMES_PER_PAGE);
+  if (n < 1 || n > total) return;
+  currentPage = n;
+  renderCards(filteredGames);
+  renderPagination(filteredGames.length);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── FILTER ──
+function updateSectionLabel() {
+  const labels = { all: 'ALL GAMES', html: 'HTML5 GAMES', swf: 'FLASH GAMES' };
+  document.getElementById('section-label').innerHTML =
+    `${labels[currentFilter]} — <span id="game-count">${filteredGames.length}</span> GAMES`;
+}
+
+function applyFilters() {
+  const q = document.getElementById('search').value.toLowerCase().trim();
+  filteredGames = allGames.filter(g => {
+    const typeMatch = currentFilter === 'all' || g.type === currentFilter;
+    const nameMatch = !q || g.name.toLowerCase().includes(q);
+    return typeMatch && nameMatch;
+  });
+  currentPage = 1;
+  updateSectionLabel();
+  renderCards(filteredGames);
+  renderPagination(filteredGames.length);
+}
+
+function setFilter(f) {
+  currentFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.filter === f);
+  });
+  applyFilters();
+}
+
+// ── LOAD ──
 async function loadGames() {
   try {
     const res = await fetch('games.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
     allGames = data.games || [];
 
-    // Update stats
     const html5 = allGames.filter(g => g.type === 'html').length;
-    const flash = allGames.filter(g => g.type === 'swf').length;
+    const flash  = allGames.filter(g => g.type === 'swf').length;
     document.getElementById('total-count').textContent = allGames.length;
     document.getElementById('html5-count').textContent = html5;
     document.getElementById('flash-count').textContent = flash;
 
     applyFilters();
   } catch(e) {
-    document.getElementById('grid').innerHTML = `<div class="empty"><span class="empty-icon">⚠️</span><p>COULD NOT LOAD<br>GAMES.JSON</p></div>`;
+    document.getElementById('grid').innerHTML =
+      `<div class="empty"><span class="empty-icon">⚠️</span><p>COULD NOT LOAD<br>GAMES.JSON</p></div>`;
   }
 }
 
-// Events
+// ── EVENTS ──
 document.getElementById('search').addEventListener('input', applyFilters);
-
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    currentFilter = btn.dataset.filter;
-    const label = currentFilter === 'all' ? 'ALL GAMES' : currentFilter === 'html' ? 'HTML5 GAMES' : 'FLASH GAMES';
-    document.getElementById('section-label').querySelector(':first-child') || null;
-    document.getElementById('section-label').innerHTML = `${label} — <span id="game-count">0</span> games`;
-    applyFilters();
-  });
-});
 
 loadGames();
 </script>
