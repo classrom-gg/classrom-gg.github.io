@@ -4,12 +4,11 @@
     "repo": "classrom-gg/classrom-gg",
     "branch": "main",
     "cdnBase": "https://cdn.jsdelivr.net/gh/classrom-gg/classrom-gg@main",
-    "totalGames": 6,
-    "htmlCount": 4,
+    "totalGames": 7,
+    "htmlCount": 5,
     "swfCount": 2
   },
   "games": [
-
     {
       "name": "2048",
       "slug": "2048",
@@ -20,7 +19,6 @@
       "description": "Slide tiles and combine numbers to reach the 2048 tile!",
       "tags": ["puzzle", "numbers", "strategy"]
     },
-
     {
       "name": "Angry Birds",
       "slug": "angry-birds",
@@ -31,7 +29,6 @@
       "description": "Launch birds to destroy the pigs' structures!",
       "tags": ["action", "physics", "classic"]
     },
-
     {
       "name": "Subway Surfers",
       "slug": "subway-surfers",
@@ -42,7 +39,6 @@
       "description": "Run through the subway, dodge trains and collect coins!",
       "tags": ["runner", "action", "arcade"]
     },
-
     {
       "name": "Pacman",
       "slug": "pacman",
@@ -53,7 +49,6 @@
       "description": "The classic arcade game. Eat dots, avoid ghosts!",
       "tags": ["arcade", "classic", "flash"]
     },
-
     {
       "name": "Super Mario Flash",
       "slug": "super-mario-flash",
@@ -64,7 +59,6 @@
       "description": "Play the classic Mario platformer right in your browser!",
       "tags": ["platformer", "classic", "flash"]
     },
-
     {
       "name": "Slope",
       "slug": "slope",
@@ -74,7 +68,7 @@
       "thumb": "/data/thumbs/slope.png",
       "description": "Guide a ball down a neon slope. How far can you go?",
       "tags": ["skill", "endless", "3d"]
-    }
+    },
     {
       "name": "Retro Bowl",
       "slug": "retro-bowl",
@@ -85,6 +79,5 @@
       "description": "Retro Bowl Unblocked",
       "tags": ["skill", "endless", "3d"]
     }
-
   ]
 }
