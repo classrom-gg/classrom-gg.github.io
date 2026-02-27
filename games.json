@@ -14,10 +14,14 @@
       "slug": "2048",
       "type": "html",
       "source": "cdn",
-      "path": "2048/index.html",
+      "path": "data/pages/2048/index.html",
       "thumb": "/data/thumbs/2048.jpg",
       "description": "Slide tiles and combine numbers to reach the 2048 tile!",
-      "tags": ["puzzle", "numbers", "strategy"]
+      "tags": [
+        "puzzle",
+        "numbers",
+        "strategy"
+      ]
     },
     {
       "name": "Angry Birds",
@@ -27,7 +31,11 @@
       "iframeUrl": "https://somesite.com/angry-birds/",
       "thumb": "/data/thumbs/angry-birds.jpg",
       "description": "Launch birds to destroy the pigs' structures!",
-      "tags": ["action", "physics", "classic"]
+      "tags": [
+        "action",
+        "physics",
+        "classic"
+      ]
     },
     {
       "name": "Subway Surfers",
@@ -37,17 +45,25 @@
       "iframeUrl": "https://somesite.com/subway-surfers/",
       "thumb": "/data/thumbs/subway-surfers.jpg",
       "description": "Run through the subway, dodge trains and collect coins!",
-      "tags": ["runner", "action", "arcade"]
+      "tags": [
+        "runner",
+        "action",
+        "arcade"
+      ]
     },
     {
       "name": "Pacman",
       "slug": "pacman",
       "type": "swf",
       "source": "cdn",
-      "path": "pacman/pacman.swf",
+      "path": "data/pages/pacman/pacman.swf",
       "thumb": "/data/thumbs/pacman.jpg",
       "description": "The classic arcade game. Eat dots, avoid ghosts!",
-      "tags": ["arcade", "classic", "flash"]
+      "tags": [
+        "arcade",
+        "classic",
+        "flash"
+      ]
     },
     {
       "name": "Super Mario Flash",
@@ -57,27 +73,39 @@
       "iframeUrl": "https://somesite.com/super-mario-flash/",
       "thumb": "/data/thumbs/super-mario-flash.jpg",
       "description": "Play the classic Mario platformer right in your browser!",
-      "tags": ["platformer", "classic", "flash"]
+      "tags": [
+        "platformer",
+        "classic",
+        "flash"
+      ]
     },
     {
       "name": "Slope",
       "slug": "slope",
       "type": "html",
-      "source": "iframe",
-      "iframeUrl": "/data/pages/slope/index.html",
+      "source": "cdn",
+      "path": "data/pages/slope/index.html",
       "thumb": "/data/thumbs/slope.png",
       "description": "Guide a ball down a neon slope. How far can you go?",
-      "tags": ["skill", "endless", "3d"]
+      "tags": [
+        "skill",
+        "endless",
+        "3d"
+      ]
     },
     {
       "name": "Retro Bowl",
       "slug": "retro-bowl",
       "type": "html",
-      "source": "iframe",
-      "iframeUrl": "/data/pages/retro-bowl/index.html",
+      "source": "cdn",
+      "path": "data/pages/retro-bowl/index.html",
       "thumb": "/data/thumbs/retrobowl.png",
       "description": "Retro Bowl Unblocked",
-      "tags": ["skill", "endless", "3d"]
+      "tags": [
+        "sport",
+        "football",
+        "retro"
+      ]
     }
   ]
 }
