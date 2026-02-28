@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://classrom-gg.github.io/sitemap.xml
