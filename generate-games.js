@@ -24,8 +24,6 @@ const GLOBAL_HEAD = `
   gtag('config', 'G-Y8X09V4JQD');
 </script>
 
-  <!-- Google Search Console verification -->
-<meta name="google-site-verification" content="JCW5Dw620tzZdotCVYC0SMEwlG--ntu-AW_KAGWNMeA" />
   <!-- Adsense -->
 
 `.trim();
