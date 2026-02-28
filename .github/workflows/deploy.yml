@@ -35,9 +35,13 @@ jobs:
 
       - name: Copy static files into _site/
         run: |
-          cp index.html  _site/
-          cp game.html   _site/
-          cp games.json  _site/
+          cp index.html   _site/
+          cp game.html    _site/
+          cp games.json   _site/
+          cp privacy.html _site/
+          cp terms.html   _site/
+          cp dmca.html    _site/
+          cp contact.html _site/
 
           [ -d data ]        && cp -r data        _site/
           [ -f favicon.ico ] && cp favicon.ico    _site/

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Classrom.GG</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://classrom-gg.github.io/privacy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root[data-theme="dark"]{--bg:#0a0a0f;--bg2:#0f0f1a;--card:#13131f;--border:#1e1e32;--accent:#00ffaa;--accent2:#ff3e6c;--text:#e2e8f0;--muted:#64748b;}
+  :root[data-theme="light"]{--bg:#f0f4f8;--bg2:#e8edf4;--card:#fff;--border:#d1d9e6;--accent:#059669;--accent2:#e11d48;--text:#1e293b;--muted:#64748b;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;min-height:100vh;transition:background .3s,color .3s;}
+  [data-theme="dark"] body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.08) 2px,rgba(0,0,0,.08) 4px);pointer-events:none;z-index:1;}
+  header{padding:16px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:100;}
+  .logo{font-family:'Press Start 2P',monospace;font-size:13px;color:var(--accent);text-decoration:none;}
+  [data-theme="dark"] .logo{text-shadow:0 0 20px rgba(0,255,170,.5);}
+  .logo span{color:var(--accent2);}
+  .back-btn{color:var(--muted);text-decoration:none;font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:7px 14px;border:1px solid var(--border);border-radius:6px;transition:all .2s;}
+  .back-btn:hover{color:var(--accent);border-color:var(--accent);}
+  .theme-toggle{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:6px 14px;cursor:pointer;font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;color:var(--text);display:flex;align-items:center;gap:6px;transition:all .2s;}
+  .theme-toggle:hover{border-color:var(--accent);}
+  .header-right{display:flex;gap:14px;align-items:center;}
+  .doc{max-width:760px;margin:0 auto;padding:52px 32px 80px;}
+  .doc-title{font-family:'Press Start 2P',monospace;font-size:clamp(11px,1.5vw,16px);color:var(--accent);margin-bottom:8px;line-height:1.8;}
+  .doc-date{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:1px;margin-bottom:40px;}
+  .doc h2{font-family:'Press Start 2P',monospace;font-size:10px;color:var(--text);letter-spacing:1px;margin:36px 0 14px;line-height:1.8;}
+  .doc p{color:var(--muted);font-size:15px;font-weight:600;line-height:1.8;margin-bottom:14px;}
+  .doc a{color:var(--accent);text-decoration:none;}
+  .doc a:hover{text-decoration:underline;}
+  .doc ul{color:var(--muted);font-size:15px;font-weight:600;line-height:1.8;padding-left:20px;margin-bottom:14px;}
+  .doc ul li{margin-bottom:6px;}
+  footer{border-top:1px solid var(--border);padding:24px 32px;text-align:center;color:var(--muted);font-size:13px;font-weight:600;}
+  footer a{color:var(--accent);text-decoration:none;margin:0 10px;}
+  @media(max-width:600px){.doc{padding:32px 16px 60px;}header{padding:14px 16px;}.logo{font-size:11px;}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="index.html">CLASSROM<span>.GG</span></a>
+  <div class="header-right">
+    <a class="back-btn" href="index.html">← Home</a>
+    <button class="theme-toggle" onclick="toggleTheme()">
+      <span id="themeIcon">☀️</span>
+      <span id="themeLabel">LIGHT</span>
+    </button>
+  </div>
+</header>
+
+<div class="doc">
+  <div class="doc-title">Privacy Policy</div>
+  <div class="doc-date">Last updated: January 1, 2025</div>
+  
+  <h2>Overview</h2>
+  <p>Classrom.GG ("we", "our", or "us") is committed to protecting your privacy. This policy explains what information we collect and how we use it.</p>
+
+  <h2>Information We Collect</h2>
+  <p>We do not require registration or login to use our site. We may collect anonymous usage data such as:</p>
+  <ul>
+    <li>Pages visited and time spent</li>
+    <li>Browser type and device information</li>
+    <li>Referring URLs</li>
+  </ul>
+  <p>This data is collected through third-party analytics tools (e.g. Google Analytics) and is used solely to improve the site experience.</p>
+
+  <h2>Cookies</h2>
+  <p>We use <strong>localStorage</strong> to remember your theme preference (dark/light mode). No personal data is stored in cookies or localStorage.</p>
+
+  <h2>Third-Party Games</h2>
+  <p>Some games on Classrom.GG are embedded from third-party sources via iframe. We are not responsible for the privacy practices of those third-party sites. Please review their privacy policies directly.</p>
+
+  <h2>Advertising</h2>
+  <p>We may display advertisements served by third-party ad networks. These networks may use cookies to serve relevant ads. You can opt out via your browser settings or tools like <a href="https://optout.aboutads.info" target="_blank">optout.aboutads.info</a>.</p>
+
+  <h2>Children's Privacy</h2>
+  <p>Classrom.GG is intended for general audiences. We do not knowingly collect personal information from children under 13. If you believe a child has submitted personal data, please contact us immediately.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy? Email us at <a href="mailto:contact@classrom.gg">contact@classrom.gg</a>.</p>
+
+</div>
+
+<footer>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Terms of Use</a>
+  <a href="dmca.html">DMCA</a>
+  <a href="contact.html">Contact</a>
+  <br><br>© 2025 Classrom.GG
+</footer>
+
+<script>
+function getStoredTheme(){return localStorage.getItem('cgTheme')||'dark';}
+function applyTheme(t){
+  document.documentElement.setAttribute('data-theme',t);
+  document.getElementById('themeIcon').textContent=t==='dark'?'☀️':'🌙';
+  document.getElementById('themeLabel').textContent=t==='dark'?'LIGHT':'DARK';
+  localStorage.setItem('cgTheme',t);
+}
+function toggleTheme(){applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');}
+applyTheme(getStoredTheme());
+</script>
+</body>
+</html>

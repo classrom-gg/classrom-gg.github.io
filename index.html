@@ -3,8 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Classrom.GG — Play Free Games Online</title>
-<meta name="description" content="Play free HTML5 and Flash games online. No download required. Works everywhere!">
+<title>Classrom.GG — Play Free Unblocked Games Online</title>
+<meta name="description" content="Play 500+ free unblocked games online — HTML5 and Flash. No download, no login required. Works at school, works everywhere. Slope, Run 3, Happy Wheels and more!">
+<link rel="canonical" href="https://classrom-gg.github.io/">
+<meta property="og:title" content="Classrom.GG — Play Free Unblocked Games Online">
+<meta property="og:description" content="Play 500+ free unblocked games online. HTML5 and Flash, no download required.">
+<meta property="og:url" content="https://classrom-gg.github.io/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Classrom.GG — Free Unblocked Games">
+<meta name="twitter:description" content="Play 500+ free unblocked games. No download, works everywhere!">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Classrom.GG",
+  "url": "https://classrom-gg.github.io/",
+  "description": "Free unblocked games online — HTML5 and Flash games, no download required.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://classrom-gg.github.io/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -20,8 +42,6 @@
     --muted: #64748b;
     --glow: 0 0 20px rgba(0,255,170,0.25);
     --hero-gradient: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237,0.15) 0%, transparent 70%);
-    --scanline: rgba(0,0,0,0.08);
-    --theme-icon: '☀️';
   }
   :root[data-theme="light"] {
     --bg: #f0f4f8;
@@ -35,13 +55,10 @@
     --muted: #64748b;
     --glow: 0 0 20px rgba(5,150,105,0.2);
     --hero-gradient: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237,0.08) 0%, transparent 70%);
-    --scanline: transparent;
-    --theme-icon: '🌙';
   }
 
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior: smooth; }
-
   body {
     background: var(--bg);
     color: var(--text);
@@ -51,16 +68,11 @@
     overflow-x: hidden;
     transition: background 0.3s, color 0.3s;
   }
-
-  /* scanline overlay - dark only */
   [data-theme="dark"] body::before {
     content:'';
     position:fixed;
     inset:0;
-    background: repeating-linear-gradient(
-      0deg, transparent, transparent 2px,
-      rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px
-    );
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px);
     pointer-events:none;
     z-index:1;
   }
@@ -79,378 +91,155 @@
     z-index: 100;
     transition: background 0.3s, border-color 0.3s;
   }
-  .logo {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 13px;
-    color: var(--accent);
-    text-shadow: 0 0 20px rgba(0,255,170,0.5);
-    text-decoration: none;
-    letter-spacing: 1px;
-  }
+  .logo { font-family: 'Press Start 2P', monospace; font-size: 13px; color: var(--accent); text-shadow: 0 0 20px rgba(0,255,170,0.5); text-decoration: none; letter-spacing: 1px; }
   [data-theme="light"] .logo { text-shadow: none; }
   .logo span { color: var(--accent2); }
-
   .header-right { display:flex; gap:24px; align-items:center; }
   nav { display:flex; gap:20px; align-items:center; }
-  nav a {
-    color: var(--muted);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
+  nav a { color: var(--muted); text-decoration: none; font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
   nav a:hover { color: var(--accent); }
-
-  /* Theme Toggle */
-  .theme-toggle {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 6px 14px;
-    cursor: pointer;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: all 0.2s;
-    color: var(--text);
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 1px;
-  }
+  .theme-toggle { background: var(--card); border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s; color: var(--text); font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 1px; }
   .theme-toggle:hover { border-color: var(--accent); }
 
   /* ── HERO ── */
-  .hero {
-    text-align: center;
-    padding: 72px 32px 52px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content:'';
-    position:absolute;
-    inset:0;
-    background: var(--hero-gradient);
-    pointer-events:none;
-  }
-  .hero h1 {
-    font-family: 'Press Start 2P', monospace;
-    font-size: clamp(16px, 2.8vw, 30px);
-    line-height: 1.7;
-    color: var(--text);
-    text-shadow: 0 0 40px rgba(124,58,237,0.6);
-    margin-bottom: 14px;
-  }
+  .hero { text-align: center; padding: 72px 32px 52px; position: relative; overflow: hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background: var(--hero-gradient); pointer-events:none; }
+  .hero h1 { font-family: 'Press Start 2P', monospace; font-size: clamp(16px, 2.8vw, 30px); line-height: 1.7; color: var(--text); text-shadow: 0 0 40px rgba(124,58,237,0.6); margin-bottom: 14px; }
   [data-theme="light"] .hero h1 { text-shadow: none; }
-  .hero h1 em {
-    font-style: normal;
-    color: var(--accent);
-    text-shadow: 0 0 30px rgba(0,255,170,0.8);
-  }
+  .hero h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 30px rgba(0,255,170,0.8); }
   [data-theme="light"] .hero h1 em { text-shadow: none; }
-  .hero p {
-    color: var(--muted);
-    font-size: 17px;
-    max-width: 480px;
-    margin: 0 auto 36px;
-    font-weight: 600;
-  }
-
-  /* ── SEARCH ── */
-  .search-wrap {
-    max-width: 480px;
-    margin: 0 auto;
-    position: relative;
-  }
-  .search-wrap input {
-    width: 100%;
-    padding: 13px 20px 13px 46px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: var(--text);
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s, background 0.3s;
-  }
-  .search-wrap input:focus {
-    border-color: var(--accent);
-    box-shadow: var(--glow);
-  }
+  .hero p { color: var(--muted); font-size: 17px; max-width: 480px; margin: 0 auto 36px; font-weight: 600; }
+  .search-wrap { max-width: 480px; margin: 0 auto; position: relative; }
+  .search-wrap input { width: 100%; padding: 13px 20px 13px 46px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-family: 'Rajdhani', sans-serif; font-size: 16px; font-weight: 600; outline: none; transition: border-color 0.2s, box-shadow 0.2s, background 0.3s; }
+  .search-wrap input:focus { border-color: var(--accent); box-shadow: var(--glow); }
   .search-wrap input::placeholder { color: var(--muted); }
-  .search-icon {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--muted);
-    font-size: 17px;
-    pointer-events: none;
-  }
+  .search-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 17px; pointer-events: none; }
 
   /* ── STATS ── */
-  .stats {
-    display: flex;
-    gap: 32px;
-    justify-content: center;
-    padding: 0 32px 36px;
-    flex-wrap: wrap;
-  }
+  .stats { display: flex; gap: 32px; justify-content: center; padding: 0 32px 36px; flex-wrap: wrap; }
   .stat { text-align: center; }
-  .stat-num {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 20px;
-    color: var(--accent);
-    display: block;
-  }
-  .stat-label {
-    font-size: 11px;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-  }
+  .stat-num { font-family: 'Press Start 2P', monospace; font-size: 20px; color: var(--accent); display: block; }
+  .stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
 
   /* ── FILTERS ── */
-  .filters {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 0 32px 36px;
-  }
-  .filter-btn {
-    padding: 8px 20px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background: var(--card);
-    color: var(--muted);
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
+  .filters { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; padding: 0 32px 36px; }
+  .filter-btn { padding: 8px 20px; border-radius: 999px; border: 1px solid var(--border); background: var(--card); color: var(--muted); font-family: 'Rajdhani', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: all 0.2s; }
   .filter-btn:hover { border-color: var(--accent3); color: var(--text); }
-  .filter-btn.active {
-    background: var(--accent3);
-    border-color: var(--accent3);
-    color: #fff;
-    box-shadow: 0 0 16px rgba(124,58,237,0.4);
-  }
-  .filter-btn.flash.active {
-    background: var(--accent2);
-    border-color: var(--accent2);
-    box-shadow: 0 0 16px rgba(255,62,108,0.4);
-  }
-  .filter-btn.html5.active {
-    background: #0ea5e9;
-    border-color: #0ea5e9;
-    box-shadow: 0 0 16px rgba(14,165,233,0.4);
-  }
+  .filter-btn.active { background: var(--accent3); border-color: var(--accent3); color: #fff; box-shadow: 0 0 16px rgba(124,58,237,0.4); }
+  .filter-btn.flash.active { background: var(--accent2); border-color: var(--accent2); box-shadow: 0 0 16px rgba(255,62,108,0.4); }
+  .filter-btn.html5.active { background: #0ea5e9; border-color: #0ea5e9; box-shadow: 0 0 16px rgba(14,165,233,0.4); }
 
   /* ── SECTION LABEL ── */
-  .section-title {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 0 32px 18px;
-    max-width: 1400px;
-    margin: 0 auto;
-  }
+  .section-title { font-family: 'Press Start 2P', monospace; font-size: 10px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; padding: 0 32px 18px; max-width: 1400px; margin: 0 auto; }
   .section-title span { color: var(--accent); }
 
   /* ── GRID ── */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
-    gap: 16px;
-    padding: 0 32px;
-    max-width: 1400px;
-    margin: 0 auto;
-  }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(195px, 1fr)); gap: 16px; padding: 0 32px; max-width: 1400px; margin: 0 auto; }
 
   /* ── CARD ── */
-  .card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
-    animation: fadeIn 0.35s ease both;
-  }
-  .card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent3);
-    box-shadow: 0 8px 28px rgba(124,58,237,0.22);
-  }
-  @keyframes fadeIn {
-    from { opacity:0; transform: translateY(10px); }
-    to   { opacity:1; transform: translateY(0); }
-  }
-
-  .card-thumb {
-    width: 100%;
-    aspect-ratio: 16/9;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 38px;
-    position: relative;
-    overflow: hidden;
-    flex-shrink: 0;
-  }
-  [data-theme="light"] .card-thumb {
-    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #a5b4fc 100%);
-  }
-  .card-thumb img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-
-
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; cursor: pointer; text-decoration: none; color: inherit; display: block; transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s; animation: fadeIn 0.35s ease both; }
+  .card:hover { transform: translateY(-4px); border-color: var(--accent3); box-shadow: 0 8px 28px rgba(124,58,237,0.22); }
+  @keyframes fadeIn { from { opacity:0; transform: translateY(10px); } to { opacity:1; transform: translateY(0); } }
+  .card-thumb { width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); display: flex; align-items: center; justify-content: center; font-size: 38px; position: relative; overflow: hidden; flex-shrink: 0; }
+  [data-theme="light"] .card-thumb { background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #a5b4fc 100%); }
+  .card-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
   .card-body { padding: 11px 13px; }
-  .card-name {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.4px;
-    margin-bottom: 6px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: var(--text);
-  }
+  .card-name { font-size: 14px; font-weight: 700; letter-spacing: 0.4px; margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text); }
   .card-meta { display: flex; gap: 6px; align-items: center; }
-  .badge {
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 2px 8px;
-    border-radius: 4px;
-  }
+  .badge { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 4px; }
   .badge-html5 { background: rgba(14,165,233,0.15); color: #38bdf8; border: 1px solid rgba(14,165,233,0.3); }
   .badge-flash { background: rgba(255,62,108,0.15); color: #fb7185; border: 1px solid rgba(255,62,108,0.3); }
 
   /* ── PAGINATION ── */
-  .pagination {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 32px 20px;
-    flex-wrap: wrap;
-  }
-  .page-btn {
-    min-width: 38px;
-    height: 38px;
-    padding: 0 12px;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    background: var(--card);
-    color: var(--muted);
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  .pagination { display: flex; gap: 8px; justify-content: center; align-items: center; padding: 40px 32px 20px; flex-wrap: wrap; }
+  .page-btn { min-width: 38px; height: 38px; padding: 0 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--card); color: var(--muted); font-family: 'Rajdhani', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
   .page-btn:hover:not(:disabled) { border-color: var(--accent3); color: var(--text); }
-  .page-btn.active {
-    background: var(--accent3);
-    border-color: var(--accent3);
-    color: #fff;
-    box-shadow: 0 0 12px rgba(124,58,237,0.4);
-  }
+  .page-btn.active { background: var(--accent3); border-color: var(--accent3); color: #fff; box-shadow: 0 0 12px rgba(124,58,237,0.4); }
   .page-btn:disabled { opacity: 0.35; cursor: not-allowed; }
-  .page-info {
+  .page-info { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; padding: 0 8px; }
+
+  /* ── EMPTY / LOADING ── */
+  .empty { grid-column: 1 / -1; text-align: center; padding: 80px 0; color: var(--muted); }
+  .empty-icon { font-size: 56px; display: block; margin-bottom: 16px; opacity: 0.4; }
+  .empty p { font-family: 'Press Start 2P', monospace; font-size: 10px; line-height: 2; }
+  .loading { text-align: center; padding: 80px 0; color: var(--muted); font-family: 'Press Start 2P', monospace; font-size: 10px; grid-column: 1 / -1; animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+  /* ── SEO SECTION ── */
+  .seo-section {
+    margin-top: 60px;
+    border-top: 1px solid var(--border);
+    background: var(--bg2);
+    padding: 52px 32px;
+  }
+  .seo-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .seo-inner h2 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    line-height: 1.8;
+  }
+  .seo-inner p {
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+  .seo-inner p strong { color: var(--text); }
+  .seo-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 28px;
+  }
+  .seo-tags span {
+    padding: 4px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
     font-size: 12px;
     font-weight: 700;
     color: var(--muted);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 0 8px;
+    letter-spacing: 0.5px;
+    transition: border-color 0.2s, color 0.2s;
   }
-  .load-more-wrap {
-    text-align: center;
-    padding: 32px 32px 0;
-  }
-  .load-more-btn {
-    padding: 12px 36px;
-    background: transparent;
-    border: 1px solid var(--accent3);
-    border-radius: 8px;
-    color: var(--accent3);
-    font-family: 'Press Start 2P', monospace;
-    font-size: 10px;
-    cursor: pointer;
-    transition: all 0.2s;
-    letter-spacing: 1px;
-  }
-  .load-more-btn:hover {
-    background: var(--accent3);
-    color: #fff;
-    box-shadow: 0 0 20px rgba(124,58,237,0.4);
-  }
-  .load-more-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-
-  /* ── EMPTY / LOADING ── */
-  .empty {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 80px 0;
-    color: var(--muted);
-  }
-  .empty-icon { font-size: 56px; display: block; margin-bottom: 16px; opacity: 0.4; }
-  .empty p { font-family: 'Press Start 2P', monospace; font-size: 10px; line-height: 2; }
-
-  .loading {
-    text-align: center;
-    padding: 80px 0;
-    color: var(--muted);
-    font-family: 'Press Start 2P', monospace;
-    font-size: 10px;
-    grid-column: 1 / -1;
-  }
-  @keyframes pulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
-  .loading { animation: pulse 1.5s infinite; }
+  .seo-tags span:hover { border-color: var(--accent); color: var(--accent); cursor: default; }
 
   /* ── FOOTER ── */
   footer {
     border-top: 1px solid var(--border);
-    padding: 28px 32px;
+    padding: 32px 32px 28px;
     text-align: center;
     color: var(--muted);
     font-size: 13px;
     font-weight: 600;
-    margin-top: 60px;
     transition: border-color 0.3s;
   }
-  footer a { color: var(--accent); text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
+  .footer-inner { max-width: 860px; margin: 0 auto; }
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--accent); }
+  footer p a { color: var(--accent); text-decoration: none; }
+  footer p a:hover { text-decoration: underline; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 600px) {
@@ -461,6 +250,8 @@
     nav a { display: none; }
     .logo { font-size: 11px; }
     .pagination { padding: 28px 14px 14px; }
+    .seo-section { padding: 36px 16px; }
+    .footer-links { gap: 14px; }
   }
 </style>
 </head>
@@ -510,22 +301,56 @@
 
 <div id="pagination-wrap"></div>
 
+<!-- SEO Description -->
+<section class="seo-section">
+  <div class="seo-inner">
+    <h2>Free Unblocked Games — Play Online Anywhere</h2>
+    <p>
+      Classrom.GG is your go-to destination for <strong>free unblocked games</strong> you can play anywhere —
+      at school, at work, or at home. No downloads, no plugins, no login required.
+      Our library includes hundreds of <strong>HTML5 games</strong> and classic <strong>Flash games</strong>
+      powered by the Ruffle emulator, so nothing is lost to time.
+    </p>
+    <p>
+      From fast-paced action games like <strong>Slope</strong> and <strong>Run 3</strong>,
+      to strategy classics like <strong>Bloons Tower Defense</strong> and retro platformers like
+      <strong>Super Mario Flash</strong> — we've got something for every type of player.
+      New games are added regularly, so bookmark this page and come back often!
+    </p>
+    <div class="seo-tags">
+      <span>Unblocked Games</span>
+      <span>HTML5 Games</span>
+      <span>Flash Games</span>
+      <span>Games at School</span>
+      <span>Free Online Games</span>
+      <span>No Download</span>
+      <span>Slope Unblocked</span>
+      <span>Run 3 Unblocked</span>
+      <span>Happy Wheels</span>
+      <span>1v1.LOL</span>
+      <span>Bloons TD</span>
+      <span>Ruffle Flash</span>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <p>© 2025 Classrom.GG &nbsp;·&nbsp; Powered by <a href="https://ruffle.rs" target="_blank">Ruffle</a> Flash Emulator &nbsp;·&nbsp; <a href="https://github.com/classrom-gg/classrom-gg" target="_blank">GitHub</a></p>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="dmca.html">DMCA</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p>© 2025 Classrom.GG &nbsp;·&nbsp; Powered by <a href="https://ruffle.rs" target="_blank">Ruffle</a> &nbsp;·&nbsp; <a href="https://github.com/classrom-gg/classrom-gg.github.io" target="_blank">GitHub</a></p>
+  </div>
 </footer>
 
 <script>
-// ── CONFIG ──
 const GAMES_PER_PAGE = 24;
 const EMOJIS = ['🎮','🕹️','👾','🎲','⚔️','🚀','🏎️','🎯','🧩','🌟','🔥','💎','🐉','🦊','🤖'];
+let allGames = [], filteredGames = [], currentFilter = 'all', currentPage = 1;
 
-// ── STATE ──
-let allGames = [];
-let filteredGames = [];
-let currentFilter = 'all';
-let currentPage = 1;
-
-// ── THEME ──
 function getStoredTheme() { return localStorage.getItem('cgTheme') || 'dark'; }
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
@@ -535,35 +360,22 @@ function applyTheme(theme) {
   else { icon.textContent = '🌙'; label.textContent = 'DARK'; }
   localStorage.setItem('cgTheme', theme);
 }
-function toggleTheme() {
-  const current = document.documentElement.getAttribute('data-theme');
-  applyTheme(current === 'dark' ? 'light' : 'dark');
-}
+function toggleTheme() { applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'); }
 applyTheme(getStoredTheme());
 
-// ── UTILS ──
-function getEmoji(name) {
-  let hash = 0;
-  for (let c of name) hash = (hash * 31 + c.charCodeAt(0)) & 0xffff;
-  return EMOJIS[hash % EMOJIS.length];
-}
+function getEmoji(name) { let h=0; for (let c of name) h=(h*31+c.charCodeAt(0))&0xffff; return EMOJIS[h%EMOJIS.length]; }
 function toSlug(n) { return n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); }
 
-// ── RENDER ──
 function renderCards(games) {
   const grid = document.getElementById('grid');
   if (!games.length) {
     grid.innerHTML = `<div class="empty"><span class="empty-icon">👾</span><p>NO GAMES FOUND<br>TRY A DIFFERENT SEARCH</p></div>`;
     return;
   }
-
-  // Pagination slice
   const start = (currentPage - 1) * GAMES_PER_PAGE;
   const pageGames = games.slice(start, start + GAMES_PER_PAGE);
-
   grid.innerHTML = pageGames.map((g, i) => {
     const slug = g.slug || toSlug(g.name);
-    // Thumb: dùng g.thumb nếu có, fallback về data/thumbs/<slug>.png
     const thumbSrc = g.thumb || `data/thumbs/${slug}.png`;
     return `
     <a class="card" href="g/${slug}/" style="animation-delay:${Math.min(i*0.035,0.5)}s">
@@ -586,36 +398,27 @@ function renderPagination(total) {
   const wrap = document.getElementById('pagination-wrap');
   const totalPages = Math.ceil(total / GAMES_PER_PAGE);
   if (totalPages <= 1) { wrap.innerHTML = ''; return; }
-
-  // Build page numbers (show max 7 buttons)
   let pages = [];
-  if (totalPages <= 7) {
-    for (let i = 1; i <= totalPages; i++) pages.push(i);
-  } else {
+  if (totalPages <= 7) { for (let i=1;i<=totalPages;i++) pages.push(i); }
+  else {
     pages = [1];
-    let start = Math.max(2, currentPage - 2);
-    let end   = Math.min(totalPages - 1, currentPage + 2);
-    if (start > 2) pages.push('...');
-    for (let i = start; i <= end; i++) pages.push(i);
-    if (end < totalPages - 1) pages.push('...');
+    let s = Math.max(2, currentPage-2), e = Math.min(totalPages-1, currentPage+2);
+    if (s > 2) pages.push('...');
+    for (let i=s;i<=e;i++) pages.push(i);
+    if (e < totalPages-1) pages.push('...');
     pages.push(totalPages);
   }
-
   const pagesHtml = pages.map(p =>
-    p === '...'
-      ? `<span class="page-info">…</span>`
-      : `<button class="page-btn ${p===currentPage?'active':''}" onclick="goPage(${p})">${p}</button>`
+    p === '...' ? `<span class="page-info">…</span>`
+    : `<button class="page-btn ${p===currentPage?'active':''}" onclick="goPage(${p})">${p}</button>`
   ).join('');
-
   wrap.innerHTML = `
     <div class="pagination">
       <button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>←</button>
       ${pagesHtml}
-      <button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===totalPages?'disabled':''}>→</button>
+      <button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===Math.ceil(total/GAMES_PER_PAGE)?'disabled':''}>→</button>
     </div>
-    <p class="page-info" style="text-align:center;padding-bottom:16px">
-      PAGE ${currentPage} / ${totalPages} &nbsp;·&nbsp; ${total} GAMES
-    </p>`;
+    <p class="page-info" style="text-align:center;padding-bottom:16px">PAGE ${currentPage} / ${Math.ceil(total/GAMES_PER_PAGE)} &nbsp;·&nbsp; ${total} GAMES</p>`;
 }
 
 function goPage(n) {
@@ -627,11 +430,9 @@ function goPage(n) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ── FILTER ──
 function updateSectionLabel() {
   const labels = { all: 'ALL GAMES', html: 'HTML5 GAMES', swf: 'FLASH GAMES' };
-  document.getElementById('section-label').innerHTML =
-    `${labels[currentFilter]} — <span id="game-count">${filteredGames.length}</span> GAMES`;
+  document.getElementById('section-label').innerHTML = `${labels[currentFilter]} — <span id="game-count">${filteredGames.length}</span> GAMES`;
 }
 
 function applyFilters() {
@@ -649,36 +450,28 @@ function applyFilters() {
 
 function setFilter(f) {
   currentFilter = f;
-  document.querySelectorAll('.filter-btn').forEach(b => {
-    b.classList.toggle('active', b.dataset.filter === f);
-  });
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === f));
   applyFilters();
 }
 
-// ── LOAD ──
 async function loadGames() {
   try {
     const res = await fetch('games.json');
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
     allGames = data.games || [];
-
     const html5 = allGames.filter(g => g.type === 'html').length;
     const flash  = allGames.filter(g => g.type === 'swf').length;
     document.getElementById('total-count').textContent = allGames.length;
     document.getElementById('html5-count').textContent = html5;
     document.getElementById('flash-count').textContent = flash;
-
     applyFilters();
   } catch(e) {
-    document.getElementById('grid').innerHTML =
-      `<div class="empty"><span class="empty-icon">⚠️</span><p>COULD NOT LOAD<br>GAMES.JSON</p></div>`;
+    document.getElementById('grid').innerHTML = `<div class="empty"><span class="empty-icon">⚠️</span><p>COULD NOT LOAD<br>GAMES.JSON</p></div>`;
   }
 }
 
-// ── EVENTS ──
 document.getElementById('search').addEventListener('input', applyFilters);
-
 loadGames();
 </script>
 </body>
