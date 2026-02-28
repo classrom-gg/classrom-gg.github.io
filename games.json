@@ -49,7 +49,7 @@
       "name": "Snake",
       "slug": "snake",
       "type": "html",
-      "url": "fbx?fbx=snake_arcade&fbxga=1&hl=en&origin=www.google.com",
+      "url": "https://www.google.com/fbx?fbx=snake_arcade&fbxga=1&hl=en&origin=www.google.com",
       "thumb": "data/thumbs/snake.png",
       "description": "Classic snake game. Eat food, grow longer, don't hit the walls!",
       "category": "Classic"
