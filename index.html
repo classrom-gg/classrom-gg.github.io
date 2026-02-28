@@ -34,7 +34,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-Y8X09V4JQD');
 </script>
 
@@ -42,66 +41,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root[data-theme="dark"] {
-    --bg: #0a0a0f;
-    --bg2: #0f0f1a;
-    --card: #13131f;
-    --border: #1e1e32;
-    --accent: #00ffaa;
-    --accent2: #ff3e6c;
-    --accent3: #7c3aed;
-    --text: #e2e8f0;
-    --muted: #64748b;
+    --bg: #0a0a0f; --bg2: #0f0f1a; --card: #13131f; --border: #1e1e32;
+    --accent: #00ffaa; --accent2: #ff3e6c; --accent3: #7c3aed;
+    --text: #e2e8f0; --muted: #64748b;
     --glow: 0 0 20px rgba(0,255,170,0.25);
     --hero-gradient: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237,0.15) 0%, transparent 70%);
   }
   :root[data-theme="light"] {
-    --bg: #f0f4f8;
-    --bg2: #e8edf4;
-    --card: #ffffff;
-    --border: #d1d9e6;
-    --accent: #059669;
-    --accent2: #e11d48;
-    --accent3: #7c3aed;
-    --text: #1e293b;
-    --muted: #64748b;
+    --bg: #f0f4f8; --bg2: #e8edf4; --card: #ffffff; --border: #d1d9e6;
+    --accent: #059669; --accent2: #e11d48; --accent3: #7c3aed;
+    --text: #1e293b; --muted: #64748b;
     --glow: 0 0 20px rgba(5,150,105,0.2);
     --hero-gradient: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237,0.08) 0%, transparent 70%);
   }
 
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 16px;
-    min-height: 100vh;
-    overflow-x: hidden;
-    transition: background 0.3s, color 0.3s;
-  }
+  body { background: var(--bg); color: var(--text); font-family: 'Rajdhani', sans-serif; font-size: 16px; min-height: 100vh; overflow-x: hidden; transition: background 0.3s, color 0.3s; }
+
+  /* Scanline chỉ áp dụng cho body, KHÔNG ảnh hưởng thumbnail nhờ isolation */
   [data-theme="dark"] body::before {
-    content:'';
-    position:fixed;
-    inset:0;
+    content:''; position:fixed; inset:0;
     background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px);
-    pointer-events:none;
-    z-index:1;
+    pointer-events:none; z-index:1;
   }
 
-  /* ── HEADER ── */
-  header {
-    padding: 16px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--border);
-    background: var(--bg);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    transition: background 0.3s, border-color 0.3s;
-  }
+  /* HEADER */
+  header { padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); background: var(--bg); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; transition: background 0.3s, border-color 0.3s; }
   .logo { font-family: 'Press Start 2P', monospace; font-size: 13px; color: var(--accent); text-shadow: 0 0 20px rgba(0,255,170,0.5); text-decoration: none; letter-spacing: 1px; }
   [data-theme="light"] .logo { text-shadow: none; }
   .logo span { color: var(--accent2); }
@@ -112,7 +78,7 @@
   .theme-toggle { background: var(--card); border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s; color: var(--text); font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 1px; }
   .theme-toggle:hover { border-color: var(--accent); }
 
-  /* ── HERO ── */
+  /* HERO */
   .hero { text-align: center; padding: 72px 32px 52px; position: relative; overflow: hidden; }
   .hero::before { content:''; position:absolute; inset:0; background: var(--hero-gradient); pointer-events:none; }
   .hero h1 { font-family: 'Press Start 2P', monospace; font-size: clamp(16px, 2.8vw, 30px); line-height: 1.7; color: var(--text); text-shadow: 0 0 40px rgba(124,58,237,0.6); margin-bottom: 14px; }
@@ -126,13 +92,13 @@
   .search-wrap input::placeholder { color: var(--muted); }
   .search-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 17px; pointer-events: none; }
 
-  /* ── STATS ── */
+  /* STATS */
   .stats { display: flex; gap: 32px; justify-content: center; padding: 0 32px 36px; flex-wrap: wrap; }
   .stat { text-align: center; }
   .stat-num { font-family: 'Press Start 2P', monospace; font-size: 20px; color: var(--accent); display: block; }
   .stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
 
-  /* ── FILTERS ── */
+  /* FILTERS */
   .filters { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; padding: 0 32px 36px; }
   .filter-btn { padding: 8px 20px; border-radius: 999px; border: 1px solid var(--border); background: var(--card); color: var(--muted); font-family: 'Rajdhani', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: all 0.2s; }
   .filter-btn:hover { border-color: var(--accent3); color: var(--text); }
@@ -140,20 +106,34 @@
   .filter-btn.flash.active { background: var(--accent2); border-color: var(--accent2); box-shadow: 0 0 16px rgba(255,62,108,0.4); }
   .filter-btn.html5.active { background: #0ea5e9; border-color: #0ea5e9; box-shadow: 0 0 16px rgba(14,165,233,0.4); }
 
-  /* ── SECTION LABEL ── */
+  /* SECTION LABEL */
   .section-title { font-family: 'Press Start 2P', monospace; font-size: 10px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; padding: 0 32px 18px; max-width: 1400px; margin: 0 auto; }
   .section-title span { color: var(--accent); }
 
-  /* ── GRID ── */
+  /* GRID */
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(195px, 1fr)); gap: 16px; padding: 0 32px; max-width: 1400px; margin: 0 auto; }
 
-  /* ── CARD ── */
+  /* CARD */
   .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; cursor: pointer; text-decoration: none; color: inherit; display: block; transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s; animation: fadeIn 0.35s ease both; }
   .card:hover { transform: translateY(-4px); border-color: var(--accent3); box-shadow: 0 8px 28px rgba(124,58,237,0.22); }
   @keyframes fadeIn { from { opacity:0; transform: translateY(10px); } to { opacity:1; transform: translateY(0); } }
-  .card-thumb { width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); display: flex; align-items: center; justify-content: center; font-size: 38px; position: relative; overflow: hidden; flex-shrink: 0; }
+
+  /* FIX SCANLINE: isolation:isolate tạo stacking context riêng, thoát khỏi body::before */
+  .card-thumb {
+    width: 100%; aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 38px; position: relative; overflow: hidden; flex-shrink: 0;
+    isolation: isolate;
+  }
   [data-theme="light"] .card-thumb { background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #a5b4fc 100%); }
-  .card-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+  .card-thumb img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: center; display: block;
+    z-index: 2;
+  }
+  .card-thumb span { z-index: 2; position: relative; }
+
   .card-body { padding: 11px 13px; }
   .card-name { font-size: 14px; font-weight: 700; letter-spacing: 0.4px; margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text); }
   .card-meta { display: flex; gap: 6px; align-items: center; }
@@ -161,7 +141,7 @@
   .badge-html5 { background: rgba(14,165,233,0.15); color: #38bdf8; border: 1px solid rgba(14,165,233,0.3); }
   .badge-flash { background: rgba(255,62,108,0.15); color: #fb7185; border: 1px solid rgba(255,62,108,0.3); }
 
-  /* ── PAGINATION ── */
+  /* PAGINATION */
   .pagination { display: flex; gap: 8px; justify-content: center; align-items: center; padding: 40px 32px 20px; flex-wrap: wrap; }
   .page-btn { min-width: 38px; height: 38px; padding: 0 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--card); color: var(--muted); font-family: 'Rajdhani', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
   .page-btn:hover:not(:disabled) { border-color: var(--accent3); color: var(--text); }
@@ -169,90 +149,33 @@
   .page-btn:disabled { opacity: 0.35; cursor: not-allowed; }
   .page-info { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; padding: 0 8px; }
 
-  /* ── EMPTY / LOADING ── */
+  /* EMPTY / LOADING */
   .empty { grid-column: 1 / -1; text-align: center; padding: 80px 0; color: var(--muted); }
   .empty-icon { font-size: 56px; display: block; margin-bottom: 16px; opacity: 0.4; }
   .empty p { font-family: 'Press Start 2P', monospace; font-size: 10px; line-height: 2; }
   .loading { text-align: center; padding: 80px 0; color: var(--muted); font-family: 'Press Start 2P', monospace; font-size: 10px; grid-column: 1 / -1; animation: pulse 1.5s infinite; }
   @keyframes pulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
 
-  /* ── SEO SECTION ── */
-  .seo-section {
-    margin-top: 60px;
-    border-top: 1px solid var(--border);
-    background: var(--bg2);
-    padding: 52px 32px;
-  }
-  .seo-inner {
-    max-width: 860px;
-    margin: 0 auto;
-  }
-  .seo-inner h2 {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 11px;
-    color: var(--accent);
-    letter-spacing: 1px;
-    margin-bottom: 24px;
-    line-height: 1.8;
-  }
-  .seo-inner p {
-    color: var(--muted);
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.8;
-    margin-bottom: 16px;
-  }
+  /* SEO SECTION */
+  .seo-section { margin-top: 60px; border-top: 1px solid var(--border); background: var(--bg2); padding: 52px 32px; }
+  .seo-inner { max-width: 860px; margin: 0 auto; }
+  .seo-inner h2 { font-family: 'Press Start 2P', monospace; font-size: 11px; color: var(--accent); letter-spacing: 1px; margin-bottom: 24px; line-height: 1.8; }
+  .seo-inner p { color: var(--muted); font-size: 15px; font-weight: 600; line-height: 1.8; margin-bottom: 16px; }
   .seo-inner p strong { color: var(--text); }
-  .seo-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 28px;
-  }
-  .seo-tags span {
-    padding: 4px 14px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--muted);
-    letter-spacing: 0.5px;
-    transition: border-color 0.2s, color 0.2s;
-  }
+  .seo-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+  .seo-tags span { padding: 4px 14px; border: 1px solid var(--border); border-radius: 999px; font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 0.5px; transition: border-color 0.2s, color 0.2s; }
   .seo-tags span:hover { border-color: var(--accent); color: var(--accent); cursor: default; }
 
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 32px 32px 28px;
-    text-align: center;
-    color: var(--muted);
-    font-size: 13px;
-    font-weight: 600;
-    transition: border-color 0.3s;
-  }
+  /* FOOTER */
+  footer { border-top: 1px solid var(--border); padding: 32px 32px 28px; text-align: center; color: var(--muted); font-size: 13px; font-weight: 600; transition: border-color 0.3s; }
   .footer-inner { max-width: 860px; margin: 0 auto; }
-  .footer-links {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 16px;
-  }
-  .footer-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
+  .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+  .footer-links a { color: var(--muted); text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
   .footer-links a:hover { color: var(--accent); }
   footer p a { color: var(--accent); text-decoration: none; }
   footer p a:hover { text-decoration: underline; }
 
-  /* ── RESPONSIVE ── */
+  /* RESPONSIVE */
   @media (max-width: 600px) {
     .grid { grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); padding: 0 14px; }
     .hero { padding: 48px 16px 36px; }
@@ -312,35 +235,16 @@
 
 <div id="pagination-wrap"></div>
 
-<!-- SEO Description -->
 <section class="seo-section">
   <div class="seo-inner">
     <h2>Free Unblocked Games — Play Online Anywhere</h2>
-    <p>
-      Classrom.GG is your go-to destination for <strong>free unblocked games</strong> you can play anywhere —
-      at school, at work, or at home. No downloads, no plugins, no login required.
-      Our library includes hundreds of <strong>HTML5 games</strong> and classic <strong>Flash games</strong>
-      powered by the Ruffle emulator, so nothing is lost to time.
-    </p>
-    <p>
-      From fast-paced action games like <strong>Slope</strong> and <strong>Run 3</strong>,
-      to strategy classics like <strong>Bloons Tower Defense</strong> and retro platformers like
-      <strong>Super Mario Flash</strong> — we've got something for every type of player.
-      New games are added regularly, so bookmark this page and come back often!
-    </p>
+    <p>Classrom.GG is your go-to destination for <strong>free unblocked games</strong> you can play anywhere — at school, at work, or at home. No downloads, no plugins, no login required. Our library includes hundreds of <strong>HTML5 games</strong> and classic <strong>Flash games</strong> powered by the Ruffle emulator, so nothing is lost to time.</p>
+    <p>From fast-paced action games like <strong>Slope</strong> and <strong>Run 3</strong>, to strategy classics like <strong>Bloons Tower Defense</strong> and retro platformers like <strong>Super Mario Flash</strong> — we've got something for every type of player. New games are added regularly, so bookmark this page and come back often!</p>
     <div class="seo-tags">
-      <span>Unblocked Games</span>
-      <span>HTML5 Games</span>
-      <span>Flash Games</span>
-      <span>Games at School</span>
-      <span>Free Online Games</span>
-      <span>No Download</span>
-      <span>Slope Unblocked</span>
-      <span>Run 3 Unblocked</span>
-      <span>Happy Wheels</span>
-      <span>1v1.LOL</span>
-      <span>Bloons TD</span>
-      <span>Ruffle Flash</span>
+      <span>Unblocked Games</span><span>HTML5 Games</span><span>Flash Games</span>
+      <span>Games at School</span><span>Free Online Games</span><span>No Download</span>
+      <span>Slope Unblocked</span><span>Run 3 Unblocked</span><span>Happy Wheels</span>
+      <span>1v1.LOL</span><span>Bloons TD</span><span>Ruffle Flash</span>
     </div>
   </div>
 </section>
@@ -393,7 +297,7 @@ function renderCards(games) {
       <div class="card-thumb">
         <img src="${thumbSrc}" alt="${g.name}" loading="lazy"
           onerror="this.style.display='none';this.nextSibling.style.display='flex'">
-        <span style="display:none;align-items:center;justify-content:center;font-size:38px;width:100%;height:100%">${getEmoji(g.name)}</span>
+        <span style="display:none;align-items:center;justify-content:center;font-size:38px;width:100%;height:100%;position:relative;z-index:2">${getEmoji(g.name)}</span>
       </div>
       <div class="card-body">
         <div class="card-name">${g.name}</div>
