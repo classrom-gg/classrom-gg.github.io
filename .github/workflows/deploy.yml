@@ -33,20 +33,14 @@ jobs:
       - name: Generate game pages
         run: OUT_DIR=_site node generate-games.js
 
-      - name: Inject GLOBAL_HEAD into static pages
-        run: node inject.js
-
-      - name: Copy all files into _site/
+      - name: Copy static pages into _site/
         run: |
           cp games.json _site/
           [ -d assets ]      && cp -r assets   _site/
           [ -d data ]        && cp -r data      _site/
           [ -f favicon.ico ] && cp favicon.ico  _site/
           [ -f favicon.png ] && cp favicon.png  _site/
-          for f in *.txt *.xml; do
-            [ -f "$f" ] && cp "$f" _site/
-          done
-          for f in google*.html bing*.html yandex*.html; do
+          for f in *.html *.txt *.xml; do
             [ -f "$f" ] && cp "$f" _site/ && echo "copied: $f"
           done
           echo "=== _site ==="
