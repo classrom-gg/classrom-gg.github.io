@@ -56,11 +56,6 @@ jobs:
         run: |
           cp games.json _site/
 
-          # Copy tất cả file ở root vào _site/ (kể cả google verification html)
-          for f in *.html *.txt *.xml; do
-            [ -f "$f" ] && cp "$f" _site/ && echo "copied: $f"
-          done
-
           [ -d assets ]      && cp -r assets      _site/
           [ -d data ]        && cp -r data         _site/
           [ -f favicon.ico ] && cp favicon.ico     _site/
@@ -68,6 +63,22 @@ jobs:
 
           echo "✅ _site contents:"
           find _site -maxdepth 3 | sort
+
+      - name: Copy verification & misc files (must run last)
+        run: |
+          # Copy tất cả file txt, xml ở root
+          for f in *.txt *.xml; do
+            [ -f "$f" ] && cp "$f" _site/ && echo "copied: $f"
+          done
+
+          # Copy Google/Bing/Yandex verification html — KHÔNG inject GLOBAL_HEAD
+          # Nhận dạng: file html nhỏ, tên bắt đầu bằng google/bing/yandex hoặc chứa verify
+          for f in google*.html bing*.html yandex*.html *verify*.html *verification*.html; do
+            [ -f "$f" ] && cp "$f" _site/ && echo "copied verification: $f"
+          done
+
+          echo "Final _site root:"
+          ls _site/*.html _site/*.txt _site/*.xml 2>/dev/null | sort
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
