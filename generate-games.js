@@ -25,7 +25,7 @@ const GLOBAL_HEAD = `
 </script>
 
   <!-- Google Search Console verification -->
-
+<meta name="google-site-verification" content="JCW5Dw620tzZdotCVYC0SMEwlG--ntu-AW_KAGWNMeA" />
   <!-- Adsense -->
 
 `.trim();
