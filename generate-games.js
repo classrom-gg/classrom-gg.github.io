@@ -86,6 +86,7 @@ function makePage(game, allGames) {
       quality: 'high',
       wmode: 'transparent',
       allowScriptAccess: 'sameDomain',
+      allowNetworking: 'internal',
     });
   } catch(e) { console.warn('Ruffle not loaded', e); }` : '';
 
