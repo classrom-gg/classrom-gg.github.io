@@ -11,6 +11,29 @@ const SITE_URL  = 'https://classrom-gg.github.io';
 const OUT_DIR   = process.env.OUT_DIR || '_site';
 const GAMES_FILE = 'games.json';
 
+// ════════════════════════════════════════════════════════
+// ██  GLOBAL CONFIG — chỉnh sửa ở đây, apply toàn bộ trang
+// ════════════════════════════════════════════════════════
+const GLOBAL_HEAD = `
+  <!-- Google Analytics -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y8X09V4JQD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y8X09V4JQD');
+</script>
+
+  <!-- Google Search Console verification -->
+  <!-- <meta name="google-site-verification" content="PASTE_YOUR_CODE_HERE"> -->
+
+  <!-- Adsense -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script> -->
+`.trim();
+// ════════════════════════════════════════════════════════
+
 // ── Load games ──────────────────────────────────────────────────────────────
 const { games } = JSON.parse(fs.readFileSync(GAMES_FILE, 'utf8'));
 
@@ -189,6 +212,7 @@ function makePage(game, allGames) {
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+${GLOBAL_HEAD}
 <style>
   :root[data-theme="dark"]{--bg:#0a0a0f;--card:#13131f;--border:#1e1e32;--accent:#00ffaa;--accent2:#ff3e6c;--accent3:#7c3aed;--text:#e2e8f0;--muted:#64748b;}
   :root[data-theme="light"]{--bg:#f0f4f8;--card:#fff;--border:#d1d9e6;--accent:#059669;--accent2:#e11d48;--accent3:#7c3aed;--text:#1e293b;--muted:#64748b;}
