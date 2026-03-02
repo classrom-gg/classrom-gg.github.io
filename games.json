@@ -16,7 +16,7 @@
       "name": "Run 3",
       "slug": "run-3",
       "type": "html",
-      "url": "data/games/run-3/index.html",
+      "url": "https://classroom-gg.classrom.workers.dev/p/run-3",
       "thumb": "data/thumbs/run3.png",
       "description": "Run 3 is a fun endless runner game created by Player 03. Navigate through space tunnels by running and jumping while gravity shifts around you. Be careful – if you fall into the void or hit obstacles, you'll have to restart!",
       "controls": "Arrow Keys or WASD - Move and jump\nSpace - Jump",
