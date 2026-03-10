@@ -29,7 +29,8 @@ const GLOBAL_HEAD = `
   <!-- <meta name="google-site-verification" content="PASTE_YOUR_CODE_HERE"> -->
 
   <!-- Adsense -->
-  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script> -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1843652128054983"
+     crossorigin="anonymous"></script>
 `.trim();
 // ════════════════════════════════════════════════════════
 
