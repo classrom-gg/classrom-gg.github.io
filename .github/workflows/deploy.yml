@@ -1,4 +1,4 @@
-name: Build & Deploy to GitHub Pages
+name: Build & Deploy
 
 on:
   push:
@@ -22,38 +22,34 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
 
       - name: Generate game pages
         run: OUT_DIR=_site node generate-games.js
 
-      - name: Copy static pages into _site/
+      - name: Copy static files to _site
         run: |
+          cp index.html _site/
           cp games.json _site/
-          [ -d assets ]      && cp -r assets   _site/
-          [ -d data ]        && cp -r data      _site/
-          [ -f favicon.ico ] && cp favicon.ico  _site/
-          [ -f favicon.png ] && cp favicon.png  _site/
-          for f in *.html *.txt *.xml; do
-            [ -f "$f" ] && cp "$f" _site/ && echo "copied: $f"
+          [ -f game.html ] && cp game.html _site/
+          for f in privacy.html terms.html dmca.html contact.html; do
+            [ -f "$f" ] && cp "$f" _site/
           done
-          echo "=== _site ==="
-          find _site -maxdepth 2 | sort
+          for f in google*.html bing*.html robots.txt sitemap.xml favicon.*; do
+            [ -f "$f" ] && cp "$f" _site/
+          done
+          [ -d assets ] && cp -r assets _site/
+          [ -d data ]   && cp -r data   _site/
+          echo "--- _site root ---"
+          ls _site/
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/configure-pages@v4
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: '_site'
-
-      - name: Deploy
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4
