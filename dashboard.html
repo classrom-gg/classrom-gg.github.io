@@ -275,6 +275,29 @@ header {
   font-weight: 600;
 }
 
+.proxy-health {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.proxy-health.success {
+  border-color: rgba(86, 247, 178, 0.22);
+  color: var(--success);
+}
+
+.proxy-health.error {
+  border-color: rgba(251, 113, 133, 0.22);
+  color: var(--error);
+}
+
+.proxy-health.info {
+  border-color: rgba(94, 166, 255, 0.22);
+  color: var(--muted);
+}
+
 .toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -766,6 +789,7 @@ textarea.small {
         <div class="field full">
           <label for="claudeProxyUrl">Proxy URL</label>
           <input class="input" id="claudeProxyUrl" data-default="http://localhost:8787/api/claude-content" type="text" value="http://localhost:8787/api/claude-content">
+          <p class="helper proxy-health info" id="proxyHealthText">Checking proxy health...</p>
         </div>
         <div class="field full">
           <label for="claudeModel">Claude model</label>
@@ -887,6 +911,7 @@ const els = {
   url: document.getElementById('gameUrl'),
   thumb: document.getElementById('gameThumb'),
   claudeProxyUrl: document.getElementById('claudeProxyUrl'),
+  proxyHealthText: document.getElementById('proxyHealthText'),
   claudeModel: document.getElementById('claudeModel'),
   aiNotes: document.getElementById('aiNotes'),
   description: document.getElementById('gameDescription'),
@@ -964,9 +989,54 @@ function setStatus(message, tone = 'info') {
   els.status.className = 'status visible ' + tone;
 }
 
+function setProxyHealthText(message, tone = 'info') {
+  els.proxyHealthText.textContent = message;
+  els.proxyHealthText.className = 'helper proxy-health ' + tone;
+}
+
 function clearStatus() {
   els.status.textContent = '';
   els.status.className = 'status';
+}
+
+function buildHealthUrl(proxyUrl) {
+  if (!proxyUrl) return null;
+
+  try {
+    const url = new URL(proxyUrl, window.location.href);
+    if (!/\/api\/claude-content\/?$/.test(url.pathname)) return null;
+    url.pathname = url.pathname.replace(/\/api\/claude-content\/?$/, '/health');
+    url.search = '';
+    url.hash = '';
+    return url.toString();
+  } catch (error) {
+    return null;
+  }
+}
+
+async function refreshProxyHealth() {
+  const healthUrl = buildHealthUrl(els.claudeProxyUrl.value.trim());
+  if (!healthUrl) {
+    setProxyHealthText('Proxy status unknown for this custom endpoint.', 'info');
+    return { checked: false, hasApiKey: null };
+  }
+
+  try {
+    const response = await fetch(healthUrl, { cache: 'no-store' });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || !data.ok) throw new Error(data.error || ('HTTP ' + response.status));
+
+    if (data.hasApiKey === false) {
+      setProxyHealthText('Proxy online, but CLAUDE_API_KEY is missing.', 'error');
+      return { checked: true, hasApiKey: false };
+    }
+
+    setProxyHealthText('Proxy online and ready.', 'success');
+    return { checked: true, hasApiKey: true };
+  } catch (error) {
+    setProxyHealthText('Could not verify proxy health. A generate request can still be attempted.', 'info');
+    return { checked: false, hasApiKey: null };
+  }
 }
 
 function normalizeGame(game) {
@@ -1279,6 +1349,12 @@ async function generateContent() {
     return;
   }
 
+  const proxyHealth = await refreshProxyHealth();
+  if (proxyHealth.checked && proxyHealth.hasApiKey === false) {
+    setStatus('Proxy đang chạy nhưng chưa có CLAUDE_API_KEY. Mở PowerShell và chạy: $env:CLAUDE_API_KEY="your_key"; node claude-proxy.js', 'error');
+    return;
+  }
+
   const payload = {
     game: baseGame,
     notes: els.aiNotes.value.trim(),
@@ -1362,6 +1438,7 @@ function attachInputSync() {
   });
 
   els.librarySearch.addEventListener('input', renderLibrary);
+  els.claudeProxyUrl.addEventListener('change', refreshProxyHealth);
 }
 
 const defaultProxyUrl = getDefaultProxyUrl();
@@ -1394,6 +1471,7 @@ els.fileInput.addEventListener('change', async (event) => {
 attachInputSync();
 restoreDraft();
 updatePreview();
+refreshProxyHealth();
 loadPublishedData();
 </script>
 </body>
