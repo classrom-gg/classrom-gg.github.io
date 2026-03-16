@@ -579,7 +579,7 @@
     {
       "slug": "acid-bunny-2",
       "name": "Acid Bunny 2",
-      "type": "swf",
+      "type": "html",
       "url": "https://classroom-gg.classrom.workers.dev/p/acid-bunny-2",
       "thumb": "data/thumbs/acid-bunny-2.png",
       "description": "Acid Bunny 2 is a fun and challenging puzzle game created by Armor Games. Complete various achievements by solving puzzles and overcoming obstacles. Test your skills and see how many achievements you can unlock!",
@@ -603,7 +603,7 @@
     {
       "slug": "american-football",
       "name": "American Football",
-      "type": "swf",
+      "type": "html",
       "url": "https://classroom-gg.classrom.workers.dev/p/american-football",
       "thumb": "data/thumbs/american-football.png",
       "description": "American Football is an exciting sports game where you can experience the thrill of the gridiron. Lead your team to victory by making strategic plays and scoring touchdowns.",
@@ -639,7 +639,7 @@
     {
       "slug": "backyard-baseball",
       "name": "Backyard Baseball",
-      "type": "swf",
+      "type": "html",
       "url": "https://classroom-gg.classrom.workers.dev/p/backyard-baseball",
       "thumb": "data/thumbs/backyard-baseball.png",
       "description": "Backyard Baseball is a fun and challenging sports game created by Max Games. Build your team, upgrade your players, and compete against your friends in exciting baseball matches.",
@@ -663,7 +663,7 @@
     {
       "slug": "billiards",
       "name": "Billiards",
-      "type": "swf",
+      "type": "html",
       "url": "https://classroom-gg.classrom.workers.dev/p/billiards",
       "thumb": "data/thumbs/billiards.png",
       "description": "Billiards is a fun and challenging strategy game created by Max Games. Build your skills, plan your shots, and compete against your opponents in this classic game of billiards.",
@@ -699,7 +699,7 @@
     {
       "slug": "blockblast",
       "name": "Blockblast",
-      "type": "html",
+      "type": "swf",
       "url": "https://classroom-gg.classrom.workers.dev/p/blockblast",
       "thumb": "data/thumbs/blockblast.png",
       "description": "Blockblast is a fun and challenging strategy game created by Hungry Studio. Build your skills, plan your shots, and compete against your opponents in this classic game of Blockblast.",
@@ -748,26 +748,49 @@
       "slug": "bloxorz",
       "name": "Bloxorz",
       "type": "swf",
-      "url": "https://classroom-gg.classrom.workers.dev/p/bloxorz"
-
+      "url": "https://classroom-gg.classrom.workers.dev/p/bloxorz",
+      "thumb": "data/thumbs/bloxorz.png",
+      "description": "Bloxorz is a fun and challenging strategy game created by Ninja Kiwi. Build your skills, plan your shots, and compete against your opponents in this classic game of Bloxorz.",
+      "controls": "Use the mouse to aim and shoot. Manage your strategy and make precise shots to win the game.",
+      "instructions": "Develop your strategy, upgrade your skills, and conquer your opponents to achieve victory.",
+      "creator": "Ninja Kiwi",
+      "category": "Adventure"
     },
     {
       "slug": "bowman-2",
       "name": "Bowman 2",
       "type": "swf",
-      "url": "https://classroom-gg.classrom.workers.dev/p/bowman-2"
+      "url": "https://classroom-gg.classrom.workers.dev/p/bowman-2",
+      "thumb": "data/thumbs/bowman-2.png",
+      "description": "Bowman 2 is a fun and challenging strategy game created by Ninja Kiwi. Build your skills, plan your shots, and compete against your opponents in this classic game of Bowman 2.",
+      "controls": "Use the mouse to aim and shoot. Manage your strategy and make precise shots to win the game.",
+      "instructions": "Develop your strategy, upgrade your skills, and conquer your opponents to achieve victory.",
+      "creator": "Ninja Kiwi",
+      "category": "Adventure"
     },
     {
       "slug": "bowmaster",
       "name": "Bowmaster",
       "type": "swf",
-      "url": "https://classroom-gg.classrom.workers.dev/p/bowmaster"
+      "url": "https://classroom-gg.classrom.workers.dev/p/bowmaster",
+      "thumb": "data/thumbs/bowmaster.png",
+      "description": "Bowmaster is a fun and challenging strategy game created by Ninja Kiwi. Build your skills, plan your shots, and compete against your opponents in this classic game of Bowmaster.",
+      "controls": "Use the mouse to aim and shoot. Manage your strategy and make precise shots to win the game.",
+      "instructions": "Develop your strategy, upgrade your skills, and conquer your opponents to achieve victory.",
+      "creator": "Ninja Kiwi",
+      "category": "Adventure"
     },
     {
       "slug": "boxhead-more-rooms",
       "name": "Boxhead More Rooms",
       "type": "swf",
-      "url": "https://classroom-gg.classrom.workers.dev/p/boxhead-more-rooms"
+      "url": "https://classroom-gg.classrom.workers.dev/p/boxhead-more-rooms",
+      "thumb": "data/thumbs/boxhead-more-rooms.png",
+      "description": "Boxhead More Rooms is a fun and challenging strategy game created by Ninja Kiwi. Build your skills, plan your shots, and compete against your opponents in this classic game of Boxhead More Rooms.",
+      "controls": "Use the mouse to aim and shoot. Manage your strategy and make precise shots to win the game.",
+      "instructions": "Develop your strategy, upgrade your skills, and conquer your opponents to achieve victory.",
+      "creator": "Ninja Kiwi",
+      "category": "Adventure"
     },
     {
       "slug": "cannon-basketball-2",
