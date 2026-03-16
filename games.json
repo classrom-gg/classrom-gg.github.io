@@ -628,7 +628,7 @@
       "slug": "az-tank",
       "name": "AZ Tank",
       "type": "swf",
-      "url": "https://classroom-gg.classrom.workers.dev/p/az-tank",
+      "url": "/data/swf/az-tank.swf",
       "thumb": "data/thumbs/az-tank.png",
       "description": "AZ Tank is an action-packed tank battle game created by Classrom-gg. Control your tank, navigate through challenging terrains, and defeat your enemies in intense battles.",
       "controls": "Player 1: Arrow Keys - Move and jump. Player 2: WASD - Move and jump. (Single player mode available against CPU)",
