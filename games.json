@@ -678,7 +678,7 @@
       "type": "swf",
       "url": "https://classroom-gg.classrom.workers.dev/p/black-knight",
       "thumb": "data/thumbs/black-knight.png",
-      "description": "Black Knight is a fun and challenging strategy game created by Max Games. Build your army, upgrade your units, and conquer your enemies in this epic battle for dominance.",
+      "description": "Black Knight is a fun and challenging strategy game created by LinhHoang. Build your army, upgrade your units, and conquer your enemies in this epic battle for dominance.",
       "controls": "Use the mouse to select and command your units. Manage resources and plan your strategy to defeat your opponents.",
       "instructions": "Develop your strategy, upgrade your units, and conquer your enemies to achieve victory.",
       "creator": "LinhHoang",
@@ -688,37 +688,68 @@
       "slug": "black-navy-war-2",
       "name": "Black Navy War 2",
       "type": "swf",
-      "url": "https://classroom-gg.classrom.workers.dev/p/black-navy-war-2"
+      "url": "https://classroom-gg.classrom.workers.dev/p/black-navy-war-2",
+      "thumb": "data/thumbs/black-navy-war-2.png",
+      "description": "Black Navy War 2 is a fun and challenging strategy game created by Kongregate. Build your skills, plan your shots, and compete against your opponents in this classic game of Black Navy War 2.",
+      "controls": "Use the mouse to aim and shoot. Manage your strategy and make precise shots to win the game.",
+      "instructions": "Develop your strategy, upgrade your skills, and conquer your opponents to achieve victory.",
+      "creator": "Kongregate",
+      "category": "Action,Strategy"
     },
     {
       "slug": "blockblast",
       "name": "Blockblast",
       "type": "html",
-      "url": "https://classroom-gg.classrom.workers.dev/p/blockblast"
+      "url": "https://classroom-gg.classrom.workers.dev/p/blockblast",
+      "thumb": "data/thumbs/blockblast.png",
+      "description": "Blockblast is a fun and challenging strategy game created by Hungry Studio. Build your skills, plan your shots, and compete against your opponents in this classic game of Blockblast.",
+      "controls": "Use the mouse to aim and shoot. Manage your strategy and make precise shots to win the game.",
+      "instructions": "Develop your strategy, upgrade your skills, and conquer your opponents to achieve victory.",
+      "creator": "Hungry Studio",
+      "category": "Puzzle"
     },
     {
       "slug": "Blood-and-Thunder",
       "name": "Blood And Thunder",
       "type": "swf",
-      "url": "https://classroom-gg.classrom.workers.dev/p/Blood-and-Thunder"
+      "url": "https://classroom-gg.classrom.workers.dev/p/Blood-and-Thunder",
+      "thumb": "data/thumbs/blood-and-thunder.png",
+      "description": "Blood And Thunder is a fun and challenging strategy game created by TTRPG. Build your skills, plan your shots, and compete against your opponents in this classic game of Blood And Thunder.",
+      "controls": "Use the mouse to aim and shoot. Manage your strategy and make precise shots to win the game.",
+      "instructions": "Develop your strategy, upgrade your skills, and conquer your opponents to achieve victory.",
+      "creator": "TTRPG",
+      "category": "Strategy,Action"
     },
     {
       "slug": "bloomin-gardens",
       "name": "Bloomin Gardens",
       "type": "swf",
-      "url": "https://classroom-gg.classrom.workers.dev/p/bloomin-gardens"
+      "url": "https://classroom-gg.classrom.workers.dev/p/bloomin-gardens",
+      "thumb": "data/thumbs/bloomin-gardens.png",
+      "description": "Bloomin Gardens is a fun and challenging strategy game created by CrazyGames. Build your skills, plan your shots, and compete against your opponents in this classic game of Bloomin Gardens.",
+      "controls": "Use the mouse to aim and shoot. Manage your strategy and make precise shots to win the game.",
+      "instructions": "Develop your strategy, upgrade your skills, and conquer your opponents to achieve victory.",
+      "creator": "CrazyGames",
+      "category": "Puzzle"
     },
     {
       "slug": "bloons-tower-defense-4",
       "name": "Bloons Tower Defense 4",
-      "type": "swf",
-      "url": "https://classroom-gg.classrom.workers.dev/p/bloons-tower-defense-4"
+      "type": "swf,html",
+      "url": "https://classroom-gg.classrom.workers.dev/p/bloons-tower-defense-4",
+      "thumb": "data/thumbs/bloons-tower-defense-4.png",
+      "description": "Bloons Tower Defense 4 is a fun and challenging strategy game created by Ninja Kiwi. Build your skills, plan your shots, and compete against your opponents in this classic game of Bloons Tower Defense 4.",
+      "controls": "Use the mouse to aim and shoot. Manage your strategy and make precise shots to win the game.",
+      "instructions": "Develop your strategy, upgrade your skills, and conquer your opponents to achieve victory.",
+      "creator": "Ninja Kiwi",
+      "category": "Puzzle"
     },
     {
       "slug": "bloxorz",
       "name": "Bloxorz",
       "type": "swf",
       "url": "https://classroom-gg.classrom.workers.dev/p/bloxorz"
+
     },
     {
       "slug": "bowman-2",
