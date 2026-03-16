@@ -503,6 +503,684 @@
     "instructions": "Don't be afraid to use the unpredictable bounces to your advantage when shooting. Use the momentum and weight physics you've learned to position your blob effectively and make powerful shots!",
     "creator": "Shoe The Goose",
     "category": "Sports"
-  }
-]
+  },
+    {
+      "slug": "1-on-1-soccer",
+      "name": "1 On 1 Soccer",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/1-on-1-soccer",
+      "thumb": "data/thumbs/1-on-1-soccer.png",
+      "description": "1 On 1 Soccer is a fun physics-based soccer game created by Shoe The Goose. Control liquid blob players in hilarious soccer matches where physics and chaos reign supreme. Be careful – if you can't control your wobbly player, your opponent will score easily!",
+      "controls": "Player 1: Arrow Keys - Move and jump. Player 2: WASD - Move and jump. (Single player mode available against CPU)",
+      "instructions": "Don't be afraid to use the unpredictable bounces to your advantage when shooting. Use the momentum and weight physics you've learned to position your blob effectively and make powerful shots!",
+      "creator": "Shoe The Goose",
+      "category": "Sports"
+    },
+    {
+      "slug": "10-is-again",
+      "name": "10 Is Again",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/10-is-again",
+      "thumb": "data/thumbs/10-is-again.png",
+      "description": "10 Is Again is a fun physics-based soccer game created by Shoe The Goose. Control liquid blob players in hilarious soccer matches where physics and chaos reign supreme. Be careful – if you can't control your wobbly player, your opponent will score easily!",
+      "controls": "Player 1: Arrow Keys - Move and jump. Player 2: WASD - Move and jump. (Single player mode available against CPU)",
+      "instructions": "Don't be afraid to use the unpredictable bounces to your advantage when shooting. Use the momentum and weight physics you've learned to position your blob effectively and make powerful shots!",
+      "creator": "Shoe The Goose",
+      "category": "Sports"
+    },
+    {
+      "slug": "2048",
+      "name": "2048",
+      "type": "html",
+      "url": "https://classroom-gg.classrom.workers.dev/p/2048",
+      "thumb": "data/thumbs/2048.png",
+      "description": "2048 is a fun and addictive puzzle game created by Gabriele Cirulli. Combine tiles with the same number to reach the 2048 tile. Plan your moves carefully and think ahead to achieve the highest score possible!",
+      "controls": "Use the Arrow Keys to move the tiles. Combine tiles with the same number to reach the 2048 tile.",
+      "instructions": "Plan your moves carefully and think ahead to achieve the highest score possible!",
+      "creator": "Gabriele Cirulli",
+      "category": "Puzzle"
+    },
+    {
+      "slug": "achievement-unlocked-",
+      "name": "Achievement Unlocked ",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/achievement-unlocked-",
+      "thumb": "data/thumbs/achievement-unlocked-.png",
+      "description": "Achievement Unlocked is a fun and challenging puzzle game created by Armor Games. Complete various achievements by solving puzzles and overcoming obstacles. Test your skills and see how many achievements you can unlock!",
+      "controls": "Use the Arrow Keys to move and interact with objects. Complete achievements by solving puzzles and overcoming obstacles.",
+      "instructions": "Test your skills and see how many achievements you can unlock!",
+      "creator": "Armor Games",
+      "category": "Puzzle"
+    },
+    {
+      "slug": "achievement-unlocked-2",
+      "name": "Achievement Unlocked 2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/achievement-unlocked-2",
+      "thumb": "data/thumbs/achievement-unlocked-2.png",
+      "description": "Achievement Unlocked 2 is a fun and challenging puzzle game created by Armor Games. Complete various achievements by solving puzzles and overcoming obstacles. Test your skills and see how many achievements you can unlock!",
+      "controls": "Use the Arrow Keys to move and interact with objects. Complete achievements by solving puzzles and overcoming obstacles.",
+      "instructions": "Test your skills and see how many achievements you can unlock!",
+      "creator": "Armor Games",
+      "category": "Puzzle"
+    },
+    {
+      "slug": "achievement-unlocked-6",
+      "name": "Achievement Unlocked 6",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/achievement-unlocked-6",
+      "thumb": "data/thumbs/achievement-unlocked-6.png",
+      "description": "Achievement Unlocked 6 is a fun and challenging puzzle game created by Armor Games. Complete various achievements by solving puzzles and overcoming obstacles. Test your skills and see how many achievements you can unlock!",
+      "controls": "Use the Arrow Keys to move and interact with objects. Complete achievements by solving puzzles and overcoming obstacles.",
+      "instructions": "Test your skills and see how many achievements you can unlock!",
+      "creator": "Armor Games",
+      "category": "Puzzle"
+    },
+    {
+      "slug": "acid-bunny-2",
+      "name": "Acid Bunny 2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/acid-bunny-2",
+      "thumb": "data/thumbs/acid-bunny-2.png",
+      "description": "Acid Bunny 2 is a fun and challenging puzzle game created by Armor Games. Complete various achievements by solving puzzles and overcoming obstacles. Test your skills and see how many achievements you can unlock!",
+      "controls": "Use the Arrow Keys to move and interact with objects. Complete achievements by solving puzzles and overcoming obstacles.",
+      "instructions": "Test your skills and see how many achievements you can unlock!",
+      "creator": "Armor Games",
+      "category": "Puzzle"
+    },
+    {
+      "slug": "age-of-war-2",
+      "name": "Age Of War 2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/age-of-war-2",
+      "thumb": "data/thumbs/age-of-war-2.png",
+      "description": "Age Of War 2 is a fun and challenging strategy game created by Max Games. Build your army, upgrade your units, and conquer your enemies in this epic battle for dominance.",
+      "controls": "Use the mouse to select and command your units. Manage resources and plan your strategy to defeat your opponents.",
+      "instructions": "Develop your strategy, upgrade your units, and conquer your enemies to achieve victory.",
+      "creator": "Max Games",
+      "category": "Strategy"
+    },
+    {
+      "slug": "american-football",
+      "name": "American Football",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/american-football",
+      "thumb": "data/thumbs/american-football.png",
+      "description": "American Football is an exciting sports game where you can experience the thrill of the gridiron. Lead your team to victory by making strategic plays and scoring touchdowns.",
+      "controls": "Use the Arrow Keys to move your players and the Spacebar to pass or kick the ball. Execute plays and strategies to outscore your opponents.",
+      "instructions": "Lead your team to victory by making strategic plays and scoring touchdowns.",
+      "creator": "Max Games",
+      "category": "Sports"
+    },
+    {
+      "slug": "army-of-ages",
+      "name": "Army Of Ages",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/army-of-ages",
+      "thumb": "data/thumbs/army-of-ages.png",
+      "description": "Army Of Ages is a fun and challenging strategy game created by Max Games. Build your army, upgrade your units, and conquer your enemies in this epic battle for dominance.",
+      "controls": "Use the mouse to select and command your units. Manage resources and plan your strategy to defeat your opponents.",
+      "instructions": "Develop your strategy, upgrade your units, and conquer your enemies to achieve victory.",
+      "creator": "Max Games",
+      "category": "Strategy"
+    },
+    {
+      "slug": "az-tank",
+      "name": "AZ Tank",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/az-tank",
+      "thumb": "data/thumbs/az-tank.png",
+      "description": "AZ Tank is an action-packed tank battle game created by Classrom-gg. Control your tank, navigate through challenging terrains, and defeat your enemies in intense battles.",
+      "controls": "Player 1: Arrow Keys - Move and jump. Player 2: WASD - Move and jump. (Single player mode available against CPU)",
+      "instructions": "Don't be afraid to use the unpredictable bounces to your advantage when shooting. Use the momentum and weight physics you've learned to position your blob effectively and make powerful shots!",
+      "creator": "Classrom-gg",
+      "category": "Action"
+    },
+    {
+      "slug": "backyard-baseball",
+      "name": "Backyard Baseball",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/backyard-baseball",
+      "thumb": "data/thumbs/backyard-baseball.png",
+      "description": "Backyard Baseball is a fun and challenging sports game created by Max Games. Build your team, upgrade your players, and compete against your friends in exciting baseball matches.",
+      "controls": "Use the mouse to select and command your players. Manage resources and plan your strategy to defeat your opponents.",
+      "instructions": "Develop your strategy, upgrade your players, and conquer your opponents to achieve victory.",
+      "creator": "Max Games",
+      "category": "Strategy"
+    },
+    {
+      "slug": "basketball-stars",
+      "name": "Basketball Stars",
+      "type": "html",
+      "url": "https://classroom-gg.classrom.workers.dev/p/basketball-stars",
+      "thumb": "data/thumbs/basketball-stars.png",
+      "description": "Basketball Stars is an exciting sports game created by Max Games. Compete against your friends in fast-paced basketball matches and show off your skills.",
+      "controls": "Use the mouse to control your players. Manage your strategy and make precise shots to win the game.",
+      "instructions": "Develop your strategy, upgrade your players, and conquer your opponents to achieve victory.",
+      "creator": "Max Games",
+      "category": "Strategy"
+    },
+    {
+      "slug": "billiards",
+      "name": "Billiards",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/billiards",
+      "thumb": "data/thumbs/billiards.png",
+      "description": "Billiards is a fun and challenging strategy game created by Max Games. Build your skills, plan your shots, and compete against your opponents in this classic game of billiards.",
+      "controls": "Use the mouse to aim and shoot. Manage your strategy and make precise shots to win the game.",
+      "instructions": "Develop your strategy, upgrade your skills, and conquer your opponents to achieve victory.",
+      "creator": "Max Games",
+      "category": "Sports"
+    },
+    {
+      "slug": "black-knight",
+      "name": "Black Knight",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/black-knight",
+      "thumb": "data/thumbs/black-knight.png",
+      "description": "Black Knight is a fun and challenging strategy game created by Max Games. Build your army, upgrade your units, and conquer your enemies in this epic battle for dominance.",
+      "controls": "Use the mouse to select and command your units. Manage resources and plan your strategy to defeat your opponents.",
+      "instructions": "Develop your strategy, upgrade your units, and conquer your enemies to achieve victory.",
+      "creator": "LinhHoang",
+      "category": "Action"
+    },
+    {
+      "slug": "black-navy-war-2",
+      "name": "Black Navy War 2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/black-navy-war-2"
+    },
+    {
+      "slug": "blockblast",
+      "name": "Blockblast",
+      "type": "html",
+      "url": "https://classroom-gg.classrom.workers.dev/p/blockblast"
+    },
+    {
+      "slug": "Blood-and-Thunder",
+      "name": "Blood And Thunder",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/Blood-and-Thunder"
+    },
+    {
+      "slug": "bloomin-gardens",
+      "name": "Bloomin Gardens",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/bloomin-gardens"
+    },
+    {
+      "slug": "bloons-tower-defense-4",
+      "name": "Bloons Tower Defense 4",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/bloons-tower-defense-4"
+    },
+    {
+      "slug": "bloxorz",
+      "name": "Bloxorz",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/bloxorz"
+    },
+    {
+      "slug": "bowman-2",
+      "name": "Bowman 2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/bowman-2"
+    },
+    {
+      "slug": "bowmaster",
+      "name": "Bowmaster",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/bowmaster"
+    },
+    {
+      "slug": "boxhead-more-rooms",
+      "name": "Boxhead More Rooms",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/boxhead-more-rooms"
+    },
+    {
+      "slug": "cannon-basketball-2",
+      "name": "Cannon Basketball 2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/cannon-basketball-2"
+    },
+    {
+      "slug": "catch-the-candy",
+      "name": "Catch The Candy",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/catch-the-candy"
+    },
+    {
+      "slug": "chibi-knight",
+      "name": "Chibi Knight",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/chibi-knight"
+    },
+    {
+      "slug": "chibiknight",
+      "name": "Chibiknight",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/chibiknight"
+    },
+    {
+      "slug": "dead-zed",
+      "name": "Dead Zed",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/dead-zed"
+    },
+    {
+      "slug": "Deeper-Sleep",
+      "name": "Deeper Sleep",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/Deeper-Sleep"
+    },
+    {
+      "slug": "dig-to-china",
+      "name": "Dig To China",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/dig-to-china"
+    },
+    {
+      "slug": "dino-run",
+      "name": "Dino Run",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/dino-run"
+    },
+    {
+      "slug": "dont-escape",
+      "name": "Dont Escape",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/dont-escape"
+    },
+    {
+      "slug": "dont-escape-2",
+      "name": "Dont Escape 2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/dont-escape-2"
+    },
+    {
+      "slug": "dont-escape-3",
+      "name": "Dont Escape 3",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/dont-escape-3"
+    },
+    {
+      "slug": "duck-life",
+      "name": "Duck Life",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/duck-life"
+    },
+    {
+      "slug": "duck-life-2",
+      "name": "Duck Life 2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/duck-life-2"
+    },
+    {
+      "slug": "duck-life-3-game",
+      "name": "Duck Life 3 Game",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/duck-life-3-game"
+    },
+    {
+      "slug": "duck-life-4",
+      "name": "Duck Life 4",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/duck-life-4"
+    },
+    {
+      "slug": "electric-man-2",
+      "name": "Electric Man 2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/electric-man-2"
+    },
+    {
+      "slug": "endless-war-4",
+      "name": "Endless War 4",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/endless-war-4"
+    },
+    {
+      "slug": "escape-the-closet",
+      "name": "Escape The Closet",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/escape-the-closet"
+    },
+    {
+      "slug": "factory-balls-2",
+      "name": "Factory Balls 2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/factory-balls-2"
+    },
+    {
+      "slug": "Feed-Us-2",
+      "name": "Feed Us 2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/Feed-Us-2"
+    },
+    {
+      "slug": "feed-us-pirates",
+      "name": "Feed Us Pirates",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/feed-us-pirates"
+    },
+    {
+      "slug": "fireboy-and-watergirl-2",
+      "name": "Fireboy And Watergirl 2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/fireboy-and-watergirl-2"
+    },
+    {
+      "slug": "FL-Tron",
+      "name": "FL Tron",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/FL-Tron"
+    },
+    {
+      "slug": "Flood_Runner_4",
+      "name": "Flood_Runner_4",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/Flood_Runner_4"
+    },
+    {
+      "slug": "Football-1-On-1",
+      "name": "Football 1 On 1",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/Football-1-On-1"
+    },
+    {
+      "slug": "gunblood",
+      "name": "Gunblood",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/gunblood"
+    },
+    {
+      "slug": "Handless_Millionaire",
+      "name": "Handless_Millionaire",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/Handless_Millionaire"
+    },
+    {
+      "slug": "happy-wheels",
+      "name": "Happy Wheels",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/happy-wheels"
+    },
+    {
+      "slug": "home-sheep-home",
+      "name": "Home Sheep Home",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/home-sheep-home"
+    },
+    {
+      "slug": "kill-time-in-the-office",
+      "name": "Kill Time In The Office",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/kill-time-in-the-office"
+    },
+    {
+      "slug": "king-dom-rush",
+      "name": "King Dom Rush",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/king-dom-rush"
+    },
+    {
+      "slug": "learn-to-fly",
+      "name": "Learn To Fly",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/learn-to-fly"
+    },
+    {
+      "slug": "learn-to-fly-2",
+      "name": "Learn To Fly 2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/learn-to-fly-2"
+    },
+    {
+      "slug": "learn-to-fly-3",
+      "name": "Learn To Fly 3",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/learn-to-fly-3"
+    },
+    {
+      "slug": "mad-arrow",
+      "name": "Mad Arrow",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/mad-arrow"
+    },
+    {
+      "slug": "MadnessNexus",
+      "name": "MadnessNexus",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/MadnessNexus"
+    },
+    {
+      "slug": "miragine-war",
+      "name": "Miragine War",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/miragine-war"
+    },
+    {
+      "slug": "murder",
+      "name": "Murder",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/murder"
+    },
+    {
+      "slug": "mutilate-a-doll",
+      "name": "Mutilate A Doll",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/mutilate-a-doll"
+    },
+    {
+      "slug": "my-friend-pedro-arena",
+      "name": "My Friend Pedro Arena",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/my-friend-pedro-arena"
+    },
+    {
+      "slug": "papa-s-freezeria",
+      "name": "Papa S Freezeria",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/papa-s-freezeria"
+    },
+    {
+      "slug": "papas-freezeria",
+      "name": "Papas Freezeria",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/papas-freezeria"
+    },
+    {
+      "slug": "papas-hot-doggeria",
+      "name": "Papas Hot Doggeria",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/papas-hot-doggeria"
+    },
+    {
+      "slug": "papassushiria",
+      "name": "Papassushiria",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/papassushiria"
+    },
+    {
+      "slug": "picos-school",
+      "name": "Picos School",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/picos-school"
+    },
+    {
+      "slug": "pinch-hitter",
+      "name": "Pinch Hitter",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/pinch-hitter"
+    },
+    {
+      "slug": "Portal_wcs2",
+      "name": "Portal_wcs2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/Portal_wcs2"
+    },
+    {
+      "slug": "portal-defenders-tower-defense",
+      "name": "Portal Defenders Tower Defense",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/portal-defenders-tower-defense"
+    },
+    {
+      "slug": "qwop",
+      "name": "Qwop",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/qwop"
+    },
+    {
+      "slug": "raft-wars-2",
+      "name": "Raft Wars 2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/raft-wars-2"
+    },
+    {
+      "slug": "robotic-emergence",
+      "name": "Robotic Emergence",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/robotic-emergence"
+    },
+    {
+      "slug": "run",
+      "name": "Run",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/run"
+    },
+    {
+      "slug": "run-3",
+      "name": "Run 3",
+      "type": "html",
+      "url": "https://classroom-gg.classrom.workers.dev/p/run-3"
+    },
+    {
+      "slug": "shuffle-time-4",
+      "name": "Shuffle Time 4",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/shuffle-time-4"
+    },
+    {
+      "slug": "sinjid-shadow-of-the-warriorf",
+      "name": "Sinjid Shadow Of The Warriorf",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/sinjid-shadow-of-the-warriorf"
+    },
+    {
+      "slug": "slope-g",
+      "name": "Slope G",
+      "type": "html",
+      "url": "https://classroom-gg.classrom.workers.dev/p/slope-g"
+    },
+    {
+      "slug": "slush-invaders",
+      "name": "Slush Invaders",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/slush-invaders"
+    },
+    {
+      "slug": "sonic-smash-bros",
+      "name": "Sonic Smash Bros",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/sonic-smash-bros"
+    },
+    {
+      "slug": "ssf2v09",
+      "name": "Ssf2v09",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/ssf2v09"
+    },
+    {
+      "slug": "super-mario-world",
+      "name": "Super Mario World",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/super-mario-world"
+    },
+    {
+      "slug": "swords_and_sandals_2",
+      "name": "Swords_and_sandals_2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/swords_and_sandals_2"
+    },
+    {
+      "slug": "Tank-Trouble",
+      "name": "Tank Trouble",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/Tank-Trouble"
+    },
+    {
+      "slug": "territory-war-3",
+      "name": "Territory War 3",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/territory-war-3"
+    },
+    {
+      "slug": "tetris",
+      "name": "Tetris",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/tetris"
+    },
+    {
+      "slug": "the-binding-of-isaac-wrath-of-the-lamb",
+      "name": "The Binding Of Isaac Wrath Of The Lamb",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/the-binding-of-isaac-wrath-of-the-lamb"
+    },
+    {
+      "slug": "the-classroom-2",
+      "name": "The Classroom 2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/the-classroom-2"
+    },
+    {
+      "slug": "the-impossible-quiz-2",
+      "name": "The Impossible Quiz 2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/the-impossible-quiz-2"
+    },
+    {
+      "slug": "the-visitor",
+      "name": "The Visitor",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/the-visitor"
+    },
+    {
+      "slug": "toxic",
+      "name": "Toxic",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/toxic"
+    },
+    {
+      "slug": "tu-46",
+      "name": "Tu 46",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/tu-46"
+    },
+    {
+      "slug": "ultimate-assassin-3",
+      "name": "Ultimate Assassin 3",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/ultimate-assassin-3"
+    },
+    {
+      "slug": "warlords",
+      "name": "Warlords",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/warlords"
+    },
+    {
+      "slug": "zombocalypse",
+      "name": "Zombocalypse",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/zombocalypse"
+    },
+    {
+      "slug": "zombocalypse-2",
+      "name": "Zombocalypse 2",
+      "type": "swf",
+      "url": "https://classroom-gg.classrom.workers.dev/p/zombocalypse-2"
+    }
+  ]
 }
